@@ -18,3 +18,5 @@ export * from './events/product-created-event';
 export * from './events/product-updated-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
+
+export * from './types/fix-status';
