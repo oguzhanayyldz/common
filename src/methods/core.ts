@@ -1,7 +1,7 @@
-export const createUniqueCode = (obj: any) => {
+const createUniqueCode = async (obj: any) => {
     let uniqueCode = ``;
     for (const i in obj) {
-        uniqueCode += `${obj[i]}-`;
+        uniqueCode += `${obj[i].toString()}-`;
     }
     let lastIndex = uniqueCode.lastIndexOf("-");
     if (lastIndex !== -1 && lastIndex === uniqueCode.length - 1) {
@@ -9,3 +9,5 @@ export const createUniqueCode = (obj: any) => {
     }
     return uniqueCode;
 }
+
+export { createUniqueCode };
