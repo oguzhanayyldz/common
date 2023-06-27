@@ -1,4 +1,4 @@
-export const createUniqueCode = (obj: any): string => {
+export function createUniqueCode (obj: any): string {
     let uniqueCode: string = `xxx`;
     // for (const i in obj) {
     //     uniqueCode += `${obj[i].toString()}-`;
