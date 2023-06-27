@@ -21,4 +21,4 @@ export * from './events/types/product-type';
 
 export * from './types/fix-status';
 
-export * from './methods/create-unique-code';
+export * from './methods/core';
