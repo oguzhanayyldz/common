@@ -1,4 +1,4 @@
-const createUniqueCode = async (obj: any): Promise<string> => {
+export let createUniqueCode = async (obj: any): Promise<string> => {
     let uniqueCode: string = ``;
     for (const i in obj) {
         uniqueCode += `${obj[i].toString()}-`;
@@ -9,5 +9,3 @@ const createUniqueCode = async (obj: any): Promise<string> => {
     }
     return uniqueCode;
 }
-
-export { createUniqueCode };
