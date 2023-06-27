@@ -10,12 +10,12 @@ export interface ProductCreatedEvent {
         userId: string;
         version: number;
         name: string;
-        description: string | null;
-        image: string | null;
+        description: string;
+        image: string;
         price: number;
         status: ProductStatus,
         type: ProductType,
-        erpId: string | null,
+        erpId: string,
         creationDate: Date,
         updatedOn: Date,
     };
