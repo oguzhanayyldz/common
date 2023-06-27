@@ -10,7 +10,7 @@ export interface ProductCreatedEvent {
         userId: string;
         version: number;
         name: string;
-        description: number;
+        description: string;
         image: string;
         price: number;
         status: ProductStatus,
@@ -18,7 +18,5 @@ export interface ProductCreatedEvent {
         erpId: string,
         creationDate: Date,
         updatedOn: Date,
-        deleted: boolean,
-        deletionDate: Date
     };
 }
