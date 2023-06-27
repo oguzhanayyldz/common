@@ -1,5 +1,5 @@
-const createUniqueCode = async (obj: any) => {
-    let uniqueCode = ``;
+const createUniqueCode = async (obj: any): Promise<string> => {
+    let uniqueCode: string = ``;
     for (const i in obj) {
         uniqueCode += `${obj[i].toString()}-`;
     }
