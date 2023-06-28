@@ -16,6 +16,8 @@ export * from './events/base-publisher';
 export * from './events/subjects';
 export * from './events/product-created-event';
 export * from './events/product-updated-event';
+export * from './events/combination-created-event';
+export * from './events/combination-updated-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
 
