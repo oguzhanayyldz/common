@@ -21,7 +21,7 @@ export interface CombinationCreatedEvent {
             id: string;
             uuid: string;
             userId: string;
-            version: string;
+            version: number;
             type: ProductType;
         }
     };
