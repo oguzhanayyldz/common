@@ -2,7 +2,7 @@ import { FixStatus } from "../types/fix-status";
 import { Subjects } from "./subjects";
 
 export interface CombinationUpdatedEvent {
-    subject: Subjects.CombinationCreated;
+    subject: Subjects.CombinationUpdated;
     data: {
         id: string;
         uuid: string;
