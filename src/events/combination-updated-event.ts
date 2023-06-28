@@ -1,5 +1,6 @@
 import { FixStatus } from "../types/fix-status";
 import { Subjects } from "./subjects";
+import { ProductType } from "./types/product-type";
 
 export interface CombinationUpdatedEvent {
     subject: Subjects.CombinationUpdated;
@@ -20,7 +21,7 @@ export interface CombinationUpdatedEvent {
             id: string;
             uuid: string;
             userId: string;
-            type: FixStatus;
+            type: ProductType;
         }
     };
 }
