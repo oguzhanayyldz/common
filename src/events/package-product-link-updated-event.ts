@@ -21,7 +21,7 @@ export interface PackageProductLinkUpdatedEvet {
             userId: string;
             version: number;
             type: ProductType;
-            price: string;
+            price: number;
         },
         packageProductId: string;
         packageProduct: {
