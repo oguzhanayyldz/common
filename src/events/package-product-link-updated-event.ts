@@ -2,7 +2,7 @@ import { FixStatus } from "../types/fix-status";
 import { Subjects } from "./subjects";
 import { ProductType } from "./types/product-type";
 
-export interface PackageProductLinkUpdated {
+export interface PackageProductLinkUpdatedEvet {
     subject: Subjects.PackageProductLinkUpdated;
     data: {
         id: string;

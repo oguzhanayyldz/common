@@ -2,7 +2,7 @@ import { FixStatus } from "../types/fix-status";
 import { Subjects } from "./subjects";
 import { ProductType } from "./types/product-type";
 
-export interface PackageProductLinkCreated {
+export interface PackageProductLinkCreatedEvent {
     subject: Subjects.PackageProductLinkCreated;
     data: {
         id: string;
