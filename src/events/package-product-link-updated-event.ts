@@ -9,6 +9,7 @@ export interface PackageProductLinkUpdatedEvet {
         uuid: string;
         userId: string;
         version: number;
+        quantity: number;
         price: number;
         status: FixStatus;
         deleted: boolean;
