@@ -12,7 +12,7 @@ export interface UserCreatedEvent {
         email: string;
         status: FixStatus;
         parentUser: string | null;
-        uniqueCode: string;
+        uniqueCode: string | null;
         creationDate: Date;
         updatedOn: Date;
     };

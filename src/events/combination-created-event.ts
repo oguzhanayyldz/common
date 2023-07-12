@@ -24,6 +24,6 @@ export interface CombinationCreatedEvent {
             version: number;
             type: ProductType;
         };
-        uniqueCode: string;
+        uniqueCode: string | null;
     };
 }

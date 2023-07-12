@@ -15,7 +15,7 @@ export interface ProductUpdatedEvent {
         status: ProductStatus;
         type: ProductType;
         erpId: string;
-        uniqueCode: string;
+        uniqueCode: string | null;
         deleted: boolean;
         deletionDate: Date;
     };

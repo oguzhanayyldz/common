@@ -12,7 +12,7 @@ export interface UserUpdatedEvent {
         email: string;
         status: FixStatus;
         parentUser: string | null;
-        uniqueCode: string;
+        uniqueCode: string | null;
         deleted: boolean;
         deletionDate: Date;
     };

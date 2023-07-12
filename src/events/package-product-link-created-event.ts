@@ -32,6 +32,6 @@ export interface PackageProductLinkCreatedEvent {
             type: ProductType;
             price: number;
         };
-        uniqueCode: string;
+        uniqueCode: string | null;
     };
 }
