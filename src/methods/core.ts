@@ -19,3 +19,10 @@ export const generateRandomString = (length: number): string => {
     }
     return randomString;
 }
+
+export const getRefDataId = (data: any): string => {
+    let str = '';
+    if (typeof data === 'object') str = data.id;
+    else str = data;
+    return str;
+}
