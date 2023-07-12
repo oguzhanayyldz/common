@@ -1,7 +1,8 @@
 export const createUniqueCode = (obj: any): string  => {
     let uniqueCode: string = ``;
     for (const i in obj) {
-        uniqueCode += `${obj[i].toString()}-`;
+        let str = getRefDataId(obj[i]);
+        uniqueCode += `${str}-`;
     }
     let lastIndex = uniqueCode.lastIndexOf("-");
     if (lastIndex !== -1 && lastIndex === uniqueCode.length - 1) {
