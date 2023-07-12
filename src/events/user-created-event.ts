@@ -11,6 +11,7 @@ export interface UserCreatedEvent {
         surname: string;
         email: string;
         status: FixStatus;
+        parentUser: string | null;
         uniqueCode: string;
         creationDate: Date;
         updatedOn: Date;
