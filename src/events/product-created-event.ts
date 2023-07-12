@@ -7,7 +7,7 @@ export interface ProductCreatedEvent {
     data: {
         id: string;
         uuid: string;
-        userId: string;
+        user: string;
         version: number;
         name: string;
         description: string;

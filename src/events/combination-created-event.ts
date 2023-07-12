@@ -7,7 +7,7 @@ export interface CombinationCreatedEvent {
     data: {
         id: string;
         uuid: string;
-        userId: string;
+        user: string;
         version: number;
         barcode: string;
         sku: string;
@@ -16,11 +16,10 @@ export interface CombinationCreatedEvent {
         erpId: string;
         deleted: boolean;
         deletionDate: Date;
-        productId: string;
         product: {
             id: string;
             uuid: string;
-            userId: string;
+            user: string;
             version: number;
             type: ProductType;
         };

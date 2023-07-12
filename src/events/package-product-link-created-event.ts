@@ -7,27 +7,25 @@ export interface PackageProductLinkCreatedEvent {
     data: {
         id: string;
         uuid: string;
-        userId: string;
+        user: string;
         version: number;
         quantity: number;
         price: number;
         status: FixStatus;
         deleted: boolean;
         deletionDate: Date;
-        productId: string;
         product: {
             id: string;
             uuid: string;
-            userId: string;
+            user: string;
             version: number;
             type: ProductType;
             price: number;
         };
-        packageProductId: string;
         packageProduct: {
             id: string;
             uuid: string;
-            userId: string;
+            user: string;
             version: number;
             type: ProductType;
             price: number;

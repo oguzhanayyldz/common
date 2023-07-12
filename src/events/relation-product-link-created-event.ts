@@ -7,23 +7,21 @@ export interface RelationProductLinkCreatedEvent {
     data: {
         id: string;
         uuid: string;
-        userId: string;
+        user: string;
         version: number;
         deleted: boolean;
         deletionDate: Date;
-        productId: string;
         product: {
             id: string;
             uuid: string;
-            userId: string;
+            user: string;
             version: number;
             type: ProductType;
         };
-        relatedProductId: string;
         relatedProduct: {
             id: string;
             uuid: string;
-            userId: string;
+            user: string;
             version: number;
             type: ProductType;
         };
