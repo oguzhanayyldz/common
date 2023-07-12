@@ -12,10 +12,11 @@ export interface ProductUpdatedEvent {
         name: string;
         description: string;
         price: number;
-        status: ProductStatus,
-        type: ProductType,
-        erpId: string,
-        deleted: boolean,
-        deletionDate: Date
+        status: ProductStatus;
+        type: ProductType;
+        erpId: string;
+        uniqueCode: string;
+        deleted: boolean;
+        deletionDate: Date;
     };
 }

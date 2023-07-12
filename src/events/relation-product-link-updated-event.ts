@@ -18,7 +18,7 @@ export interface RelationProductLinkUpdatedEvent {
             userId: string;
             version: number;
             type: ProductType;
-        },
+        };
         relatedProductId: string;
         relatedProduct: {
             id: string;
@@ -26,6 +26,7 @@ export interface RelationProductLinkUpdatedEvent {
             userId: string;
             version: number;
             type: ProductType;
-        }
+        };
+        uniqueCode: string;
     };
 }

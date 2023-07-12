@@ -31,6 +31,7 @@ export interface PackageProductLinkUpdatedEvet {
             version: number;
             type: ProductType;
             price: number;
-        }
+        };
+        uniqueCode: string;
     };
 }

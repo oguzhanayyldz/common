@@ -22,7 +22,7 @@ export interface PackageProductLinkCreatedEvent {
             version: number;
             type: ProductType;
             price: number;
-        },
+        };
         packageProductId: string;
         packageProduct: {
             id: string;
@@ -31,6 +31,7 @@ export interface PackageProductLinkCreatedEvent {
             version: number;
             type: ProductType;
             price: number;
-        }
+        };
+        uniqueCode: string;
     };
 }

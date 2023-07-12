@@ -23,6 +23,7 @@ export interface CombinationCreatedEvent {
             userId: string;
             version: number;
             type: ProductType;
-        }
+        };
+        uniqueCode: string;
     };
 }

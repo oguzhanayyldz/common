@@ -13,10 +13,11 @@ export interface ProductCreatedEvent {
         description: string;
         image: string;
         price: number;
-        status: ProductStatus,
-        type: ProductType,
-        erpId: string,
-        creationDate: Date,
-        updatedOn: Date,
+        status: ProductStatus;
+        type: ProductType;
+        erpId: string;
+        uniqueCode: string;
+        creationDate: Date;
+        updatedOn: Date;
     };
 }
