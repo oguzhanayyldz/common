@@ -17,9 +17,9 @@ export interface ProductCreatedEvent {
         price: number;
         status: ProductStatus;
         type: ProductType;
-        erpId: string;
+        erpId?: string | null;
         uniqueCode: string | null;
-        creationDate: Date;
-        updatedOn: Date;
+        creationDate?: Date;
+        updatedOn?: Date;
     };
 }

@@ -17,9 +17,9 @@ export interface ProductUpdatedEvent {
         price: number;
         status: ProductStatus;
         type: ProductType;
-        erpId: string;
+        erpId?: string | null;
         uniqueCode: string | null;
         deleted: boolean;
-        deletionDate: Date;
+        deletionDate: Date | null;
     };
 }
