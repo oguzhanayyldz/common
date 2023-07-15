@@ -13,9 +13,7 @@ export interface CombinationCreatedEvent {
         sku: string;
         price: number;
         status: FixStatus;
-        erpId: string;
-        deleted: boolean;
-        deletionDate: Date;
+        erpId?: string | null;
         product: {
             id: string;
             uuid: string;
