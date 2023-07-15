@@ -9,6 +9,8 @@ export interface ProductCreatedEvent {
         uuid: string;
         user: string;
         version: number;
+        barcode: string | null;
+        sku: string;
         name: string;
         description: string;
         image: string;

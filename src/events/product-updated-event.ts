@@ -9,6 +9,8 @@ export interface ProductUpdatedEvent {
         uuid: string;
         user: string;
         version: number;
+        barcode: string | null;
+        sku: string;
         name: string;
         description: string;
         price: number;
