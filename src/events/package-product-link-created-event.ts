@@ -12,15 +12,12 @@ export interface PackageProductLinkCreatedEvent {
         quantity: number;
         price: number;
         status: FixStatus;
-        deleted: boolean;
-        deletionDate: Date;
         product: {
             id: string;
             uuid: string;
             user: string;
             version: number;
             type: ProductType;
-            price: number;
         };
         packageProduct: {
             id: string;
@@ -28,7 +25,6 @@ export interface PackageProductLinkCreatedEvent {
             user: string;
             version: number;
             type: ProductType;
-            price: number;
         };
         uniqueCode: string | null;
     };

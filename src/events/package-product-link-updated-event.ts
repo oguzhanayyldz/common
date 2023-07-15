@@ -20,7 +20,6 @@ export interface PackageProductLinkUpdatedEvent {
             user: string;
             version: number;
             type: ProductType;
-            price: number;
         },
         packageProduct: {
             id: string;
@@ -28,7 +27,6 @@ export interface PackageProductLinkUpdatedEvent {
             user: string;
             version: number;
             type: ProductType;
-            price: number;
         };
         uniqueCode: string | null;
     };
