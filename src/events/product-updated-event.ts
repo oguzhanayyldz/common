@@ -12,6 +12,7 @@ export interface ProductUpdatedEvent {
         barcode: string | null;
         sku: string;
         name: string;
+        image: string;
         description: string;
         price: number;
         status: ProductStatus;
