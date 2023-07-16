@@ -13,7 +13,7 @@ export interface PackageProductLinkUpdatedEvent {
         price: number;
         status: FixStatus;
         deleted: boolean;
-        deletionDate: Date;
+        deletionDate?: Date | null;
         product: {
             id: string;
             uuid: string;
