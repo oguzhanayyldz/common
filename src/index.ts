@@ -28,5 +28,6 @@ export * from './events/types/product-status';
 export * from './events/types/product-type';
 
 export * from './types/fix-status';
+export * from './types/unit-type';
 
 export * from './methods/core';
