@@ -10,7 +10,7 @@ export interface RelationProductLinkUpdatedEvent {
         user: string;
         version: number;
         deleted: boolean;
-        deletionDate: Date;
+        deletionDate?: Date | null;
         product: {
             id: string;
             uuid: string;

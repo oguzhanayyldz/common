@@ -9,8 +9,6 @@ export interface RelationProductLinkCreatedEvent {
         uuid: string;
         user: string;
         version: number;
-        deleted: boolean;
-        deletionDate: Date;
         product: {
             id: string;
             uuid: string;
