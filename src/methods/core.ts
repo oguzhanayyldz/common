@@ -1,8 +1,10 @@
 export const createUniqueCode = (obj: any): string  => {
     let uniqueCode: string = ``;
     for (const i in obj) {
-        let str = getRefDataId(obj[i]);
-        uniqueCode += `${str}-`;
+        if (obj[i] !== undefined && obj[i] !== null) {
+            let str = getRefDataId(obj[i]);
+            uniqueCode += `${str.trim()}-`;
+        }
     }
     let lastIndex = uniqueCode.lastIndexOf("-");
     if (lastIndex !== -1 && lastIndex === uniqueCode.length - 1) {
@@ -23,7 +25,7 @@ export const generateRandomString = (length: number): string => {
 
 export const getRefDataId = (data: any): string => {
     let str = '';
-    if (typeof data === 'object') str = data.id;
-    else str = data;
+    if (typeof data === 'object') str = data.id.toString();
+    else str = data.toString();
     return str;
 }
