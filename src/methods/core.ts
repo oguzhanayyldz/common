@@ -1,3 +1,5 @@
+//NOTE - Veriler ile unique bir string yaratıyor. 
+// Veritabanı içerisinde benzer kayıtların oluşmamsı için kullanılır
 export const createUniqueCode = (obj: any): string  => {
     let uniqueCode: string = ``;
     for (const i in obj) {
@@ -13,6 +15,7 @@ export const createUniqueCode = (obj: any): string  => {
     return uniqueCode;
 }
 
+//NOTE - Uzunluk değeri alarak o uzunlukta random bir string oluşturur.
 export const generateRandomString = (length: number): string => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let randomString = '';
@@ -23,9 +26,37 @@ export const generateRandomString = (length: number): string => {
     return randomString;
 }
 
+//NOTE - ObjectId tipinde olan yani referans olan değerleri string tipine dönüştürür.
+// Aynı şekilde eğer bir obje ise içerisindeki id alanına ulaşarak geri döner.
 export const getRefDataId = (data: any): string => {
     let str = '';
     if (typeof data === 'object') str = data.id.toString();
     else str = data.toString();
     return str;
+}
+
+//NOTE - Raflarda bulunan barkodları decode ederek hangi depo, raf, satır ve stun olduğunu döner.
+export const encodeShelfBarcode = (barcode: string): {warehouse: number, shelf: number, row: number, column: number } | null => {
+    let splitStr = barcode.split("X");
+    if (splitStr.length == 4) {
+        return {
+            warehouse: parseInt(splitStr[0]),
+            shelf: parseInt(splitStr[1]),
+            row: parseInt(splitStr[2]),
+            column: parseInt(splitStr[3])
+        }
+    }
+    return null;
+}
+
+//NOTE - Bir rafın içerisinde bulunan tüm kolonların alacağı rafları sırası ile verir.
+export const createShelfBarcodes = (shelf: { warehouseAlternativeId: number, alternativeId: number, row: number, column: number }): string[] => {
+    let barcodes: string[] = [];
+    for (var r = 1; r <= shelf.row; r++) {
+        for (var c = 1; c <= shelf.column; c++) {
+            let barcode = `${shelf.warehouseAlternativeId}X${shelf.alternativeId}X${r}X${c}`;
+            barcodes.push(barcode);
+        } 
+    }
+    return barcodes;
 }
