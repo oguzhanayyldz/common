@@ -8,5 +8,7 @@ export enum Subjects {
     RelationProductLinkCreated = "relation:product:link:created",
     RelationProductLinkUpdated = "relation:product:link:updated",
     UserCreated = 'user:created',
-    UserUpdated = "user:updated"
+    UserUpdated = "user:updated",
+    StockCreated = "stock:created",
+    StockUpdated = "stock:updated"
 }
