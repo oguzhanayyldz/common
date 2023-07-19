@@ -39,6 +39,11 @@ export const getRefDataId = (data: any): string => {
 export const encodeShelfBarcode = (barcode: string): {warehouse: number, shelf: number, row: number, column: number } | null => {
     let splitStr = barcode.split("X");
     if (splitStr.length == 4) {
+        for ( var split of splitStr ) {
+            if (!parseIntTry(split)){
+                return null;
+            }
+        }
         return {
             warehouse: parseInt(splitStr[0]),
             shelf: parseInt(splitStr[1]),
@@ -59,4 +64,28 @@ export const createShelfBarcodes = (shelf: { warehouseAlternativeId: number, alt
         } 
     }
     return barcodes;
+}
+
+//NOTE - Güvenli bir şekilde parseInt yapmak için bu metod kullanılır.
+export const parseIntTry = (value: string) => {
+    const parsedValue = parseInt(value);
+
+    //NOTE- parsedValue NaN ise veya dönüştürme başarısız olursa, false döndürülecek.
+    if (isNaN(parsedValue)) {
+        return false;
+    }
+
+    return parsedValue;
+}
+
+//NOTE - Güvenli bir şekilde parseFloat yapmak için bu metod kullanılır.
+export const parseFloatTry = (value: string) => {
+    const parsedValue = parseFloat(value);
+
+    //NOTE- parsedValue NaN ise veya dönüştürme başarısız olursa, false döndürülecek.
+    if (isNaN(parsedValue)) {
+        return false;
+    }
+
+    return parsedValue;
 }
