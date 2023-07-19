@@ -12,7 +12,7 @@ export interface StockCreatedEvent {
         combination?: string | null;
         barcode: string;
         shelfBarcode: string;
-        shelfAlternativeId: string;
+        shelfAlternativeId: number;
         unitType?: UnitType;
         row: number;
         column: number;
