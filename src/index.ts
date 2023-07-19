@@ -24,6 +24,8 @@ export * from './events/package-product-link-created-event';
 export * from './events/package-product-link-updated-event';
 export * from './events/relation-product-link-created-event';
 export * from './events/relation-product-link-updated-event';
+export * from './events/stock-created-event';
+export * from './events/stock-updated-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
 
