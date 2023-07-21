@@ -31,17 +31,13 @@ export const generateRandomString = (length: number): string => {
 //NOTE - ObjectId tipinde olan yani referans olan değerleri string tipine dönüştürür.
 // Aynı şekilde eğer bir obje ise içerisindeki id alanına ulaşarak geri döner.
 export const getRefDataId = (data: any): string => {
-    let str = '';
-    // ObjectId'yi doğrulayalım
+    //NOTE - ObjectId'yi doğrulayalım
     if (ObjectId.isValid(data)) {
-        console.log("Is objectId", data);
         return data.toString();
-        // Doğrulanmış ObjectId ile devam edin
+        //NOTE - Doğrulanmış ObjectId ile devam edin
     } else if (typeof data == "object") {
-        console.log("Is object", data);
         return data.id.toString();
     } else if (typeof data == "string") {
-        console.log("Is string", data);
         return data;
     }
     return "";
