@@ -33,7 +33,11 @@ export const generateRandomString = (length: number): string => {
 export const getRefDataId = (data: any): string => {
     //NOTE - ObjectId'yi doğrulayalım
     if (ObjectId.isValid(data)) {
-        return data.toString();
+        if (data.id) {
+            return data.id.toString();
+        } else {
+            return data.toString();
+        }
         //NOTE - Doğrulanmış ObjectId ile devam edin
     } else if (typeof data == "object") {
         return data.id.toString();
