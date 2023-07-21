@@ -1,3 +1,4 @@
+import { UnitType } from "../types/unit-type";
 import { Subjects } from "./subjects";
 import { ProductStatus } from "./types/product-status";
 import { ProductType } from "./types/product-type";
@@ -17,6 +18,7 @@ export interface ProductCreatedEvent {
         price: number;
         status: ProductStatus;
         type: ProductType;
+        unitType: UnitType;
         erpId?: string | null;
         uniqueCode: string | null;
         creationDate?: Date;
