@@ -1,3 +1,5 @@
+import { ObjectId } from "bson";
+
 //NOTE - Veriler ile unique bir string yaratıyor. 
 // Veritabanı içerisinde benzer kayıtların oluşmamsı için kullanılır
 export const createUniqueCode = (obj: any): string  => {
@@ -30,8 +32,14 @@ export const generateRandomString = (length: number): string => {
 // Aynı şekilde eğer bir obje ise içerisindeki id alanına ulaşarak geri döner.
 export const getRefDataId = (data: any): string => {
     let str = '';
-    if (typeof data === 'object') str = data.id.toString();
-    else str = data.toString();
+    // ObjectId'yi doğrulayalım
+    if (ObjectId.isValid(data)) {
+        return data.toString();
+        // Doğrulanmış ObjectId ile devam edin
+    } else {
+        str = data.id.toString();
+        // Geçersiz ObjectId ile yapılacak işlemler
+    }
     return str;
 }
 
