@@ -33,15 +33,18 @@ export const generateRandomString = (length: number): string => {
 export const getRefDataId = (data: any): string => {
     let str = '';
     // ObjectId'yi doğrulayalım
-    console.log(data);
     if (ObjectId.isValid(data)) {
+        console.log("Is objectId", data);
         return data.toString();
         // Doğrulanmış ObjectId ile devam edin
-    } else {
-        str = data.id.toString();
-        // Geçersiz ObjectId ile yapılacak işlemler
+    } else if (typeof data == "object") {
+        console.log("Is object", data);
+        return data.id.toString();
+    } else if (typeof data == "string") {
+        console.log("Is string", data);
+        return data;
     }
-    return str;
+    return "";
 }
 
 //NOTE - Raflarda bulunan barkodları decode ederek hangi depo, raf, satır ve stun olduğunu döner.
