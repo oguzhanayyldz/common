@@ -101,3 +101,30 @@ export const parseFloatTry = (value: string) => {
 
     return parsedValue;
 }
+
+//NOTE - Ean barkod üretir ve geri döner.
+const generateEanBarcode = (): string => {
+    //NOTE - 12 haneli rastgele bir sayı oluşturuyoruz (ilk hane 0 olmamalı).
+    let randomDigits = String(Math.floor(Math.random() * 9) + 1); // İlk hane 1-9 arasında olmalı.
+
+    for (let i = 0; i < 11; i++) {
+        randomDigits += String(Math.floor(Math.random() * 10));
+    }
+
+    //NOTE - Son hane (check digit) için çift ve tek basamakların toplamını hesaplayalım.
+    let sumEven = 0;
+    let sumOdd = 0;
+
+    for (let i = 0; i < 12; i++) {
+        if (i % 2 === 0) {
+            sumEven += parseInt(randomDigits.charAt(i));
+        } else {
+            sumOdd += parseInt(randomDigits.charAt(i));
+        }
+    }
+
+    //NOTE - Son hane (check digit) hesaplaması.
+    let checkDigit = (10 - ((sumEven * 3 + sumOdd) % 10)) % 10;
+
+    return randomDigits + String(checkDigit);
+}
