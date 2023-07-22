@@ -103,7 +103,7 @@ export const parseFloatTry = (value: string) => {
 }
 
 //NOTE - Ean barkod üretir ve geri döner.
-const generateEanBarcode = (): string => {
+export const generateEanBarcode = (): string => {
     //NOTE - 12 haneli rastgele bir sayı oluşturuyoruz (ilk hane 0 olmamalı).
     let randomDigits = String(Math.floor(Math.random() * 9) + 1); // İlk hane 1-9 arasında olmalı.
 
