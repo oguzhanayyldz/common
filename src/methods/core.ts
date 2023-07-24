@@ -128,3 +128,8 @@ export const generateEanBarcode = (): string => {
 
     return randomDigits + String(checkDigit);
 }
+
+//NOTE - Veri tabanı ile arasındaki referanslarından kaldırmak için kullanılır...
+export const clearRef = (data: any) => {
+    return JSON.parse(JSON.stringify(data));
+}
