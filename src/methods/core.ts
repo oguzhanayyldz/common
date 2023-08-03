@@ -32,7 +32,9 @@ export const generateRandomString = (length: number): string => {
 // Aynı şekilde eğer bir obje ise içerisindeki id alanına ulaşarak geri döner.
 export const getRefDataId = (data: any): string => {
     //NOTE - ObjectId'yi doğrulayalım
-    if (ObjectId.isValid(data)) {
+    if (data && data.id && typeof data.id === "string"){
+        return data.id.toString();
+    } else if (ObjectId.isValid(data)) {
         if (data.id) {
             return data.id.toString();
         } else {
@@ -41,8 +43,6 @@ export const getRefDataId = (data: any): string => {
         //NOTE - Doğrulanmış ObjectId ile devam edin
     } else if (typeof data == "object") {
         return data.id.toString();
-    } else if (typeof data == "string") {
-        return data;
     }
     return "";
 }
