@@ -43,8 +43,9 @@ export const getRefDataId = (data: any): string => {
         //NOTE - Doğrulanmış ObjectId ile devam edin
     } else if (typeof data == "object") {
         return data.id.toString();
+    } else {
+        return data.toString();
     }
-    return "";
 }
 
 //NOTE - Raflarda bulunan barkodları decode ederek hangi depo, raf, satır ve stun olduğunu döner.
