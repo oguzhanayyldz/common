@@ -35,14 +35,14 @@ export const getRefDataId = (data: any): string => {
     if (data && data.id && typeof data.id === "string"){
         return data.id.toString();
     } else if (ObjectId.isValid(data)) {
-        if (data.id) {
-            return data.id.toString();
+        if (data._id) {
+            return data._id.toString();
         } else {
             return data.toString();
         }
         //NOTE - Doğrulanmış ObjectId ile devam edin
     } else if (typeof data == "object") {
-        return data.id.toString();
+        return data._id.toString();
     } else {
         return data.toString();
     }
