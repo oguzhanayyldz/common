@@ -1,10 +1,10 @@
 export enum Subjects {
     ProductCreated = 'product:created',
     ProductUpdated = 'product:updated',
+    ProductStockCreated = 'product:stock:created',
     ProductStockUpdated = 'product:stock:updated',
     CombinationCreated = "combination:created",
     CombinationUpdated = "combination:updated",
-    CombinationStockUpdated = "combination:stock:updated",
     PackageProductLinkCreated = "package:product:link:created",
     PackageProductLinkUpdated = "package:product:link:updated",
     RelationProductLinkCreated = "relation:product:link:created",

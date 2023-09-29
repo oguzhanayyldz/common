@@ -1,8 +1,8 @@
 import { Subjects } from "./subjects";
 import { UnitType } from "../types/unit-type";
 
-export interface ProductStockUpdatedEvent {
-    subject: Subjects.ProductStockUpdated;
+export interface ProductStockCreatedEvent {
+    subject: Subjects.ProductStockCreated;
     data: {
         id: string;
         uuid: string;
