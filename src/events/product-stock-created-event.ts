@@ -13,5 +13,8 @@ export interface ProductStockCreatedEvent {
         unitType: UnitType
         productId: string;
         combinationId?: string | null;
+        creationDate?: Date;
+        updatedOn?: Date;
+        uniqueCode: string | null;
     };
 }
