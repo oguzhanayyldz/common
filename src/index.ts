@@ -31,6 +31,7 @@ export * from './events/stock-updated-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
 export * from './events/types/order-status';
+export * from './events/types/payment-type';
 
 export * from './types/fix-status';
 export * from './types/unit-type';
