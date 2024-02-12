@@ -1,13 +1,23 @@
 import { Request, Response, NextFunction } from 'express';
-import { validationResult } from 'express-validator';
+import { checkSchema, validationResult } from 'express-validator';
 import { RequestValidationError } from '../errors/request-validation-error';
 
-export const validateRequest = (req: Request, res: Response, next: NextFunction) => {
-    const errors = validationResult(req);
-
-    if (!errors.isEmpty()) {
-        throw new RequestValidationError(errors.array());
-    }
-
-    next();
+export const validateRequest = (schema: any) => {
+    return [
+        checkSchema(schema),
+        (req: Request, res: Response, next: NextFunction) => {
+            const errors = validationResult(req);
+    
+            if (!errors.isEmpty()) {
+                throw new RequestValidationError(errors.array());
+            }
+    
+            const extraFields = Object.keys(req.body).filter((field) => !schema.hasOwnProperty(field));
+            if (extraFields.length > 0) {
+                return res.status(400).json({ error: 'Tanımlanmayan alanlar: ' + extraFields.join(', ') });
+            }
+    
+            next();
+        }
+    ]
 }
