@@ -41,7 +41,7 @@ export interface OrderCreatedEvent {
             uuid: string;
             version: number;
             name: string;
-            shippingName?: string;
+            shippingNumber?: string;
             trackingNumber?: string;
             printLink?: string;
             trackingLink?: string;
