@@ -56,7 +56,7 @@ export interface OrderCreatedEvent {
         purchaseNumber: string;
         platformNumber: string;
         platform: string;
-        docSerial: string;
+        docSerial?: string;
         type?: OrderType,
         status?: OrderStatus,
         total: number;
