@@ -1,10 +1,7 @@
-import { UnitType } from "../types/unit-type";
 import { Subjects } from "./subjects";
 import { OrderStatus } from "./types/order-status";
 import { OrderType } from "./types/order-type";
 import { PaymentType } from "./types/payment-type";
-import { ProductStatus } from "./types/product-status";
-import { ProductType } from "./types/product-type";
 
 export interface OrderCreatedEvent {
     subject: Subjects.OrderCreated;
@@ -22,7 +19,7 @@ export interface OrderCreatedEvent {
             code?: string;
             email: string;
             gender?: string;
-            district?: string;
+            disctrict?: string;
             country?: string,
             postalCode?: string,
             identityNumber?: string,
