@@ -31,6 +31,8 @@ export * from './events/stock-created-event';
 export * from './events/stock-updated-event';
 export * from './events/order-created-event';
 export * from './events/order-product-created-event';
+export * from './events/order-updated-event';
+export * from './events/order-product-updated-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
 export * from './events/types/order-type';
