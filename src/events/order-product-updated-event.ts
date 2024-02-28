@@ -7,6 +7,7 @@ export interface OrderProductUpdatedEvent {
     quantity?: number;
     name?: string;
     sku?: string;
+    barcode?: string;
     code?: string;
     price?: number;
     priceWithoutTax?: number;
