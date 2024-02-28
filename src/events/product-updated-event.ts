@@ -22,7 +22,7 @@ export interface ProductUpdatedEvent {
         unitType: UnitType;
         erpId?: string | null;
         uniqueCode: string | null;
-        deleted: boolean;
-        deletionDate: Date | null;
+        deleted?: boolean;
+        deletionDate?: Date | null;
     };
 }

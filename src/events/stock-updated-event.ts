@@ -19,7 +19,7 @@ export interface StockUpdatedEvent {
         quantity: number;
         rezervedQuantity: number;
         uniqueCode: string | null;
-        deleted: boolean;
-        deletionDate: Date | null;
+        deleted?: boolean;
+        deletionDate?: Date | null;
     };
 }

@@ -14,7 +14,7 @@ export interface CombinationUpdatedEvent {
         price: number;
         status: FixStatus;
         erpId?: string | null;
-        deleted: boolean;
+        deleted?: boolean;
         deletionDate?: Date | null;
         product: {
             id: string;
