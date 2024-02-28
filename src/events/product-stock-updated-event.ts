@@ -14,7 +14,7 @@ export interface ProductStockUpdatedEvent {
         productId: string;
         combinationId?: string | null;
         uniqueCode: string | null;
-        deleted: boolean;
-        deletionDate: Date | null;
+        deleted?: boolean;
+        deletionDate?: Date | null;
     };
 }
