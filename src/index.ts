@@ -41,5 +41,6 @@ export * from './events/types/payment-type';
 
 export * from './types/fix-status';
 export * from './types/unit-type';
+export * from './types/sort-type';
 
 export * from './methods/core';
