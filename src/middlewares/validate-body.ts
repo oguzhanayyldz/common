@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { Schema, ValidationError, checkSchema, validationResult } from 'express-validator';
+import { Schema, checkSchema, validationResult } from 'express-validator';
 import { RequestValidationError } from '../errors/request-validation-error';
 
 
@@ -16,6 +16,19 @@ export const validateBody = (schema: Schema) => {
             if (!errors.isEmpty()) {
                 throw new RequestValidationError(errors.array());
             }
+
+            const possibleInValues = ["query", "params", "body", undefined];
+            const filteredKeys = Object.keys(schema).filter((key) => {
+                const attributeSchema = schema[key];
+                return possibleInValues.some((possibleInValue) => attributeSchema.in === possibleInValue);
+            });
+
+            const desiredResult = filteredKeys.map((key) => {
+                // Anahtarları istediğiniz formata dönüştürün (örneğin, nesne veya dizi)
+                return { key, in: schema[key].in };
+            });
+
+            console.log(desiredResult);
 
             // Tanımlanmayan alanları kontrol et
             const extraFields = Object.keys(req.body).filter((field) => !Object.keys(schema).includes(field));
