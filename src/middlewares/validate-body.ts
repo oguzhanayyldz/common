@@ -28,13 +28,22 @@ export const validateBody = (schema: Schema) => {
                 return { key, in: schema[key].in };
             });
 
-            console.log(desiredResult);
-
             // Tanımlanmayan alanları kontrol et
-            const extraFields = Object.keys(req.body).filter((field) => !Object.keys(schema).includes(field));
+            const extraFields = Object.keys(req.body).filter((field) => !desiredResult.find(x => x.key === field && (x.in === "body" || x.in === undefined)));
             if (extraFields.length > 0) {
-                // return res.status(400).json({ error: 'Tanımlanmayan alanlar: ' + extraFields.join(', ') });
                 let validationError: any = [{ msg: `Tanımlanmayan alanlar: ${extraFields.join(', ')}` }];
+                throw new RequestValidationError (validationError);
+            }
+
+            const extraFieldsQuery = Object.keys(req.query).filter((field) => !desiredResult.find(x => x.key === field && x.in === "query"));
+            if (extraFieldsQuery.length > 0) {
+                let validationError: any = [{ msg: `Tanımlanmayan alanlar: ${extraFieldsQuery.join(', ')}` }];
+                throw new RequestValidationError (validationError);
+            }
+
+            const extraFieldsParams = Object.keys(req.params).filter((field) => !desiredResult.find(x => x.key === field && x.in === "params"));
+            if (extraFieldsParams.length > 0) {
+                let validationError: any = [{ msg: `Tanımlanmayan alanlar: ${extraFieldsParams.join(', ')}` }];
                 throw new RequestValidationError (validationError);
             }
 
