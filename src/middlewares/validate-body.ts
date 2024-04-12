@@ -28,6 +28,8 @@ export const validateBody = (schema: Schema) => {
                 return { key, in: schema[key].in };
             });
 
+            console.log(desiredResult);
+
             // Tanımlanmayan alanları kontrol et
             const extraFields = Object.keys(req.body).filter((field) => !desiredResult.find(x => x.key === field && (x.in === "body" || x.in === undefined)));
             if (extraFields.length > 0) {
