@@ -1,4 +1,5 @@
 import { ObjectId } from "bson";
+import { BadRequestError } from "../errors/bad-request-error";
 
 //NOTE - Veriler ile unique bir string yaratıyor. 
 // Veritabanı içerisinde benzer kayıtların oluşmamsı için kullanılır
@@ -133,4 +134,27 @@ export const generateEanBarcode = (): string => {
 //NOTE - Veri tabanı ile arasındaki referanslarından kaldırmak için kullanılır...
 export const clearRef = (data: any) => {
     return JSON.parse(JSON.stringify(data));
+}
+
+//NOTE - Kodu uyutmak için kullanılır...
+export const sleep = (ms: number): Promise<void> => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+//NOTE - Kdv fiyatını hesaplamak için kullanılır
+export const calculateTaxPrice = (total: number, tax: number): number => {
+    if (typeof total !== 'number' || typeof tax !== 'number' || total < 0 || tax < 0) {
+        throw new BadRequestError('Geçersiz tutar veya vergi yüzdesi.');
+    }
+
+    return parseFloat((total * (tax / 100)).toFixed(3));
+}
+
+//NOTE - Kdv hariç fiyatı hesaplamak için kullanılır
+export const calculatePriceWithoutTax = (total: number, tax: number): number => {
+    if (typeof total !== 'number' || typeof tax !== 'number' || total < 0 || tax < 0) {
+        throw new BadRequestError('Geçersiz tutar veya vergi yüzdesi.');
+    }
+
+    return parseFloat( (total - (total * (tax / 100))).toFixed(3));
 }
