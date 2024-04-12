@@ -46,7 +46,6 @@ export const validateBody = (schema: Schema) => {
                 let validationError: any = [{ msg: `Tanımlanmayan alanlar: ${extraFieldsParams.join(', ')}` }];
                 throw new RequestValidationError (validationError);
             }
-
             // Her şey geçerliyse, sonraki middleware'e geç
             next();
         }).catch(next); // Hata oluşursa, Express'e hata yönetimine geç
