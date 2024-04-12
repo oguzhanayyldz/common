@@ -21,7 +21,7 @@ export interface ProductUpdatedEvent {
         type: ProductType;
         unitType: UnitType;
         erpId?: string | null;
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
         deleted?: boolean;
         deletionDate?: Date | null;
     };

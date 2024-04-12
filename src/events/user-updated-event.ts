@@ -11,9 +11,9 @@ export interface UserUpdatedEvent {
         surname: string;
         email: string;
         status: FixStatus;
-        parentUser: string | null;
-        uniqueCode: string | null;
-        deleted: boolean;
-        deletionDate: Date;
+        parentUser?: string | null;
+        uniqueCode?: string | null;
+        deleted?: boolean;
+        deletionDate?: Date;
     };
 }

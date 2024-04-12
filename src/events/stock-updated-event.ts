@@ -18,7 +18,7 @@ export interface StockUpdatedEvent {
         column: number;
         quantity: number;
         rezervedQuantity: number;
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
         deleted?: boolean;
         deletionDate?: Date | null;
     };

@@ -26,6 +26,6 @@ export interface PackageProductLinkCreatedEvent {
             version: number;
             type: ProductType;
         };
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
     };
 }

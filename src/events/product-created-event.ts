@@ -21,7 +21,7 @@ export interface ProductCreatedEvent {
         type: ProductType;
         unitType: UnitType;
         erpId?: string | null;
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
         creationDate?: Date;
         updatedOn?: Date;
     };

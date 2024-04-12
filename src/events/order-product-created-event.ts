@@ -4,7 +4,9 @@ export interface OrderProductCretedEvent {
     version: number;
     product?: string,
     combination?: string;
+    packageProduct?: string;
     quantity: number;
+    exQuantity?: number;
     name: string;
     sku: string;
     barcode: string;
@@ -25,5 +27,5 @@ export interface OrderProductCretedEvent {
     cancelledQuantity?: number;
     returned?: boolean;
     returnedQuantity?: number;
-    uniqueCode?: string | null;
+    uniqueCode?: string | null; 
 }

@@ -15,6 +15,6 @@ export interface ProductStockCreatedEvent {
         combinationId?: string | null;
         creationDate?: Date;
         updatedOn?: Date;
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
     };
 }

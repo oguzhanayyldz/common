@@ -23,6 +23,6 @@ export interface RelationProductLinkCreatedEvent {
             version: number;
             type: ProductType;
         };
-        uniqueCode: string | null;
+        uniqueCode?: string | null;
     };
 }
