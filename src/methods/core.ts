@@ -1,10 +1,13 @@
+"use strict";;
+
 import { ObjectId } from "bson";
 import { BadRequestError } from "../errors/bad-request-error";
+import { ShelfBarcodesList } from "../types/shelf-barcodes-list";
 
 //NOTE - Veriler ile unique bir string yaratıyor. 
-// Veritabanı içerisinde benzer kayıtların oluşmamsı için kullanılır
-export const createUniqueCode = (obj: any): string  => {
-    let uniqueCode: string = ``;
+// Veritabanı içerisinde benzer kayıtların oluşmaması için kullanılır
+export const createUniqueCode = (obj: any): string => {
+    let uniqueCode = ``;
     for (const i in obj) {
         if (obj[i] !== undefined && obj[i] !== null) {
             let str = getRefDataId(obj[i]);
@@ -16,7 +19,7 @@ export const createUniqueCode = (obj: any): string  => {
         uniqueCode = uniqueCode.slice(0, lastIndex);
     }
     return uniqueCode;
-}
+};
 
 //NOTE - Uzunluk değeri alarak o uzunlukta random bir string oluşturur.
 export const generateRandomString = (length: number): string => {
@@ -27,34 +30,45 @@ export const generateRandomString = (length: number): string => {
         randomString += characters.charAt(randomIndex);
     }
     return randomString;
-}
+};
 
 //NOTE - ObjectId tipinde olan yani referans olan değerleri string tipine dönüştürür.
 // Aynı şekilde eğer bir obje ise içerisindeki id alanına ulaşarak geri döner.
 export const getRefDataId = (data: any): string => {
     //NOTE - ObjectId'yi doğrulayalım
-    if (data && data.id && typeof data.id === "string"){
+    if (data && data.id && typeof data.id === "string") {
         return data.id.toString();
-    } else if (ObjectId.isValid(data)) {
+    }
+    else if (ObjectId.isValid(data)) {
         if (data._id) {
             return data._id.toString();
-        } else {
+        }
+        else {
             return data.toString();
         }
         //NOTE - Doğrulanmış ObjectId ile devam edin
-    } else if (typeof data == "object") {
+    }
+    else if (typeof data == "object") {
         return data._id.toString();
-    } else {
+    }
+    else {
         return data.toString();
     }
+};
+
+interface ShelfBarcode {
+    warehouse: number;
+    shelf: number;
+    row: number;
+    column: number;
 }
 
 //NOTE - Raflarda bulunan barkodları decode ederek hangi depo, raf, satır ve stun olduğunu döner.
-export const encodeShelfBarcode = (barcode: string): {warehouse: number, shelf: number, row: number, column: number } | null => {
+export const encodeShelfBarcode = (barcode: string): ShelfBarcode | null => {
     let splitStr = barcode.split("X");
     if (splitStr.length == 4) {
-        for ( var split of splitStr ) {
-            if (!parseIntTry(split)){
+        for (const split of splitStr) {
+            if (!parseIntTry(split)) {
                 return null;
             }
         }
@@ -63,98 +77,106 @@ export const encodeShelfBarcode = (barcode: string): {warehouse: number, shelf: 
             shelf: parseInt(splitStr[1]),
             row: parseInt(splitStr[2]),
             column: parseInt(splitStr[3])
-        }
+        };
     }
     return null;
+};
+
+interface Shelf {
+    warehouseAlternativeId: number | string;
+    alternativeId: number | string;
+    row: number;
+    column: number;
 }
 
 //NOTE - Bir rafın içerisinde bulunan tüm kolonların alacağı rafları sırası ile verir.
-export const createShelfBarcodes = (shelf: { warehouseAlternativeId: number, alternativeId: number, row: number, column: number }): string[] => {
-    let barcodes: string[] = [];
-    for (var r = 1; r <= shelf.row; r++) {
-        for (var c = 1; c <= shelf.column; c++) {
+export const createShelfBarcodes = (shelf: Shelf): ShelfBarcodesList[] => {
+    let barcodes: ShelfBarcodesList[] = [];
+    for (let r = 1; r <= shelf.row; r++) {
+        for (let c = 1; c <= shelf.column; c++) {
             let barcode = `${shelf.warehouseAlternativeId}X${shelf.alternativeId}X${r}X${c}`;
-            barcodes.push(barcode);
-        } 
+            barcodes.push({ row: r, column: c, barcode: barcode });
+        }
     }
     return barcodes;
-}
+};
 
 //NOTE - Güvenli bir şekilde parseInt yapmak için bu metod kullanılır.
-export const parseIntTry = (value: string) => {
+export const parseIntTry = (value: any): number | false => {
     const parsedValue = parseInt(value);
-
     //NOTE- parsedValue NaN ise veya dönüştürme başarısız olursa, false döndürülecek.
     if (isNaN(parsedValue)) {
         return false;
     }
-
     return parsedValue;
-}
+};
 
 //NOTE - Güvenli bir şekilde parseFloat yapmak için bu metod kullanılır.
-export const parseFloatTry = (value: string) => {
+export const parseFloatTry = (value: any): number | false => {
     const parsedValue = parseFloat(value);
-
     //NOTE- parsedValue NaN ise veya dönüştürme başarısız olursa, false döndürülecek.
     if (isNaN(parsedValue)) {
         return false;
     }
-
     return parsedValue;
-}
+};
 
 //NOTE - Ean barkod üretir ve geri döner.
 export const generateEanBarcode = (): string => {
     //NOTE - 12 haneli rastgele bir sayı oluşturuyoruz (ilk hane 0 olmamalı).
     let randomDigits = String(Math.floor(Math.random() * 9) + 1); // İlk hane 1-9 arasında olmalı.
-
     for (let i = 0; i < 11; i++) {
         randomDigits += String(Math.floor(Math.random() * 10));
     }
-
     //NOTE - Son hane (check digit) için çift ve tek basamakların toplamını hesaplayalım.
     let sumEven = 0;
     let sumOdd = 0;
-
     for (let i = 0; i < 12; i++) {
         if (i % 2 === 0) {
             sumEven += parseInt(randomDigits.charAt(i));
-        } else {
+        }
+        else {
             sumOdd += parseInt(randomDigits.charAt(i));
         }
     }
-
     //NOTE - Son hane (check digit) hesaplaması.
     let checkDigit = (10 - ((sumEven * 3 + sumOdd) % 10)) % 10;
-
     return randomDigits + String(checkDigit);
-}
+};
 
 //NOTE - Veri tabanı ile arasındaki referanslarından kaldırmak için kullanılır...
-export const clearRef = (data: any) => {
+export const clearRef = <T>(data: T): T => {
     return JSON.parse(JSON.stringify(data));
-}
+};
 
 //NOTE - Kodu uyutmak için kullanılır...
 export const sleep = (ms: number): Promise<void> => {
     return new Promise((resolve) => setTimeout(resolve, ms));
-}
+};
 
 //NOTE - Kdv fiyatını hesaplamak için kullanılır
 export const calculateTaxPrice = (total: number, tax: number): number => {
     if (typeof total !== 'number' || typeof tax !== 'number' || total < 0 || tax < 0) {
         throw new BadRequestError('Geçersiz tutar veya vergi yüzdesi.');
     }
-
     return parseFloat((total * (tax / 100)).toFixed(3));
-}
+};
 
 //NOTE - Kdv hariç fiyatı hesaplamak için kullanılır
 export const calculatePriceWithoutTax = (total: number, tax: number): number => {
     if (typeof total !== 'number' || typeof tax !== 'number' || total < 0 || tax < 0) {
         throw new BadRequestError('Geçersiz tutar veya vergi yüzdesi.');
     }
+    return parseFloat((total - (total * (tax / 100))).toFixed(3));
+};
 
-    return parseFloat( (total - (total * (tax / 100))).toFixed(3));
-}
+//NOTE - Bir array içerisindeki objeleri verilen alana göre sıralar.
+export const sortByField = <T>(array: T[], field: keyof T, order: "asc" | "desc" = "asc"): T[] => {
+    return array.sort((a, b) => {
+        if (a[field] < b[field])
+            return order === "asc" ? -1 : 1;
+        if (a[field] > b[field])
+            return order === "asc" ? 1 : -1;
+        return 0;
+    });
+};

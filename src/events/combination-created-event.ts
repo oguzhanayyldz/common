@@ -1,3 +1,4 @@
+import { AttributesType } from "../types/attributes-type";
 import { FixStatus } from "../types/fix-status";
 import { Subjects } from "./subjects";
 import { ProductType } from "./types/product-type";
@@ -14,6 +15,8 @@ export interface CombinationCreatedEvent {
         price: number;
         status: FixStatus;
         erpId?: string | null;
+        sort?: number | null;
+        attributes?: AttributesType;
         product: {
             id: string;
             uuid: string;

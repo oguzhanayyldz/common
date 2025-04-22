@@ -1,4 +1,3 @@
-// Re-export stuff from errors and middlewares
 export * from './errors/bad-request-error';
 export * from './errors/custom-error';
 export * from './errors/database-connection-error';
@@ -9,6 +8,7 @@ export * from './errors/request-validation-error';
 export * from './middlewares/current-user';
 export * from './middlewares/error-handler';
 export * from './middlewares/require-auth';
+export * from './middlewares/require-auth-admin';
 export * from './middlewares/validate-request';
 export * from './middlewares/validate-body';
 
@@ -33,6 +33,8 @@ export * from './events/order-created-event';
 export * from './events/order-product-created-event';
 export * from './events/order-updated-event';
 export * from './events/order-product-updated-event';
+export * from './events/integration-command-event';
+export * from './events/entity-deleted-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
 export * from './events/types/order-type';
@@ -42,5 +44,23 @@ export * from './events/types/payment-type';
 export * from './types/fix-status';
 export * from './types/unit-type';
 export * from './types/sort-type';
+export * from './types/integration-type';
+export * from './types/resourceName';
+export * from './types/user-role';
+export * from './types/credential-type';
+export * from './types/shelf-barcodes-list';
+export * from './types/currency-code';
+export * from './types/currency-symbol';
+export * from './types/number-comparisons-type';
+export * from './types/address-type';
+export * from './types/attributes-type';
 
 export * from './methods/core';
+export * from './methods/validator';
+
+export * from './interfaces/validator-func-params.interface';
+export * from './interfaces/integration-instance.interface';
+
+export * from './core/base-integration';
+export * from './core/integration-credentials';
+export * from './core/marketplace-integration';

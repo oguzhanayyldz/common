@@ -1,18 +1,20 @@
 export enum Subjects {
-    ProductCreated = 'product:created',
-    ProductUpdated = 'product:updated',
-    ProductStockCreated = 'product:stock:created',
-    ProductStockUpdated = 'product:stock:updated',
+    ProductCreated = "product:created",
+    ProductUpdated = "product:updated",
+    ProductStockCreated = "product:stock:created",
+    ProductStockUpdated = "product:stock:updated",
     CombinationCreated = "combination:created",
     CombinationUpdated = "combination:updated",
     PackageProductLinkCreated = "package:product:link:created",
     PackageProductLinkUpdated = "package:product:link:updated",
     RelationProductLinkCreated = "relation:product:link:created",
     RelationProductLinkUpdated = "relation:product:link:updated",
-    UserCreated = 'user:created',
+    UserCreated = "user:created",
     UserUpdated = "user:updated",
     StockCreated = "stock:created",
     StockUpdated = "stock:updated",
     OrderCreated = "order:created",
-    OrderUpdated = "order:updated"
+    OrderUpdated = "order:updated",
+    IntegrationCommand = "integration:command",
+    EntityDeleted = "entity:deleted"
 }

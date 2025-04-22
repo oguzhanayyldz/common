@@ -2,7 +2,7 @@ export interface OrderProductUpdatedEvent {
     id: string;
     uuid: string;
     version: number;
-    product?: string,
+    product?: string;
     combination?: string;
     quantity?: number;
     name?: string;

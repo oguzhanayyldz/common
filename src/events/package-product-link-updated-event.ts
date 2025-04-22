@@ -20,7 +20,7 @@ export interface PackageProductLinkUpdatedEvent {
             user: string;
             version: number;
             type: ProductType;
-        },
+        };
         packageProduct: {
             id: string;
             uuid: string;

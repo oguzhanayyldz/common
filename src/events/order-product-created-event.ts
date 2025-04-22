@@ -2,7 +2,7 @@ export interface OrderProductCretedEvent {
     id: string;
     uuid: string;
     version: number;
-    product?: string,
+    product?: string;
     combination?: string;
     packageProduct?: string;
     quantity: number;
@@ -27,5 +27,5 @@ export interface OrderProductCretedEvent {
     cancelledQuantity?: number;
     returned?: boolean;
     returnedQuantity?: number;
-    uniqueCode?: string | null; 
+    uniqueCode?: string | null;
 }

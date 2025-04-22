@@ -1,5 +1,5 @@
 export enum ProductStatus {
-    Active = 'active',
-    Passive = 'passive',
-    Draft = 'draft'
-}  
+    Active = "active",
+    Passive = "passive",
+    Draft = "draft"
+}

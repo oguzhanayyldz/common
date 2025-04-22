@@ -21,12 +21,12 @@ export interface OrderCreatedEvent {
             email: string;
             gender?: string;
             disctrict?: string;
-            country?: string,
-            postalCode?: string,
-            identityNumber?: string,
-            taxNumber?: string,
-            taxOffice?: string
-        },
+            country?: string;
+            postalCode?: string;
+            identityNumber?: string;
+            taxNumber?: string;
+            taxOffice?: string;
+        };
         payment?: {
             id: string;
             uuid: string;
@@ -34,9 +34,9 @@ export interface OrderCreatedEvent {
             bankName?: string;
             bankCode?: string;
             paymentCode?: string;
-            paymentType?: PaymentType,
-            date?: Date
-        }
+            paymentType?: PaymentType;
+            date?: Date;
+        };
         orderCargo?: {
             id: string;
             uuid: string;
@@ -50,13 +50,51 @@ export interface OrderCreatedEvent {
             sentDate?: Date;
             shippedDate?: Date;
             deliveredDate?: Date;
-        }
+        };
+        billingAddress: {
+            id: string;
+            uuid: string;
+            version: number;
+            name: string;
+            surname: string;
+            country: string;
+            city: string;
+            district?: string;
+            addressLine1: string;
+            addressLine2?: string;
+            postalCode?: string;
+            phone?: string;
+            email?: string;
+            identityNumber?: string;
+            taxNumber?: string;
+            taxOffice?: string;
+            companyName?: string;
+        };
+        shippingAddress: {
+            id: string;
+            uuid: string;
+            version: number;
+            name: string;
+            surname: string;
+            country: string;
+            city: string;
+            district?: string;
+            addressLine1: string;
+            addressLine2?: string;
+            postalCode?: string;
+            phone?: string;
+            email?: string;
+            identityNumber?: string;
+            taxNumber?: string;
+            taxOffice?: string;
+            companyName?: string;
+        };
         purchaseNumber: string;
         platformNumber: string;
         platform: string;
         docSerial?: string;
-        type?: OrderType,
-        status?: OrderStatus,
+        type?: OrderType;
+        status?: OrderStatus;
         total: number;
         totalWithOutTax?: number;
         taxTotal?: number;
@@ -69,6 +107,6 @@ export interface OrderCreatedEvent {
         shippingTaxRate?: number;
         date: Date;
         uniqueCode?: string | null;
-        orderProducts?: OrderProductCretedEvent[]
+        orderProducts?: OrderProductCretedEvent[];
     };
 }

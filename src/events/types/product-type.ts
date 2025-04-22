@@ -1,7 +1,7 @@
-export enum ProductType{
+export enum ProductType {
     Normal = "normal",
     Group = "group",
     Package = "package",
-    MainRelated = "main-releated",
-    SubRelated = "sub-releated"
+    MainRelated = "main-related",
+    SubRelated = "sub-related"
 }

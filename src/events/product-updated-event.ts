@@ -2,6 +2,7 @@ import { Subjects } from "./subjects";
 import { ProductStatus } from "./types/product-status";
 import { ProductType } from "./types/product-type";
 import { UnitType } from "../types/unit-type";
+import { CurrencyCode } from "../types/currency-code";
 
 export interface ProductUpdatedEvent {
     subject: Subjects.ProductUpdated;
@@ -15,7 +16,9 @@ export interface ProductUpdatedEvent {
         name: string;
         image: string;
         description: string;
+        listPrice?: number;
         price: number;
+        currency: CurrencyCode;
         tax: number;
         status: ProductStatus;
         type: ProductType;

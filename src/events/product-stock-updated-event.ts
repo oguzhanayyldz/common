@@ -10,7 +10,7 @@ export interface ProductStockUpdatedEvent {
         version: number;
         quantity: number;
         rezervedQuantity: number;
-        unitType: UnitType
+        unitType: UnitType;
         productId: string;
         combinationId?: string | null;
         uniqueCode?: string | null;

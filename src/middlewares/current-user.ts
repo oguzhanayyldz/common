@@ -1,5 +1,6 @@
-import  { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { UserRole } from '../types/user-role';
 
 interface UserPayload {
     id: string;
@@ -7,21 +8,18 @@ interface UserPayload {
     name: string;
     surname: string;
     parentUser: string;
+    role: UserRole;
 }
 
 declare global {
-    namespace Express{
+    namespace Express {
         interface Request {
             currentUser?: UserPayload;
         }
     }
 }
 
-export const currentUser = (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
+export const currentUser = (req: Request, res: Response, next: NextFunction) => {
     if (!req.session?.jwt) {
         return next();
     }
@@ -32,4 +30,4 @@ export const currentUser = (
     } catch (err) {}
 
     next();
-}; 
+};

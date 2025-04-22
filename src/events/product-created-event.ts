@@ -1,3 +1,4 @@
+import { CurrencyCode } from "../types/currency-code";
 import { UnitType } from "../types/unit-type";
 import { Subjects } from "./subjects";
 import { ProductStatus } from "./types/product-status";
@@ -15,7 +16,9 @@ export interface ProductCreatedEvent {
         name: string;
         description: string;
         image: string;
+        listPrice?: number;
         price: number;
+        currency: CurrencyCode;
         tax: number;
         status: ProductStatus;
         type: ProductType;
