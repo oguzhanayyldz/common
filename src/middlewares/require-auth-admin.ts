@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { NotAuthorizedError } from '../errors/not-authorized-error';
 import { UserRole } from '../types/user-role';
 
-export const requireAdminAuth = (req: Request, res: Response, next: NextFunction) => {
+export const requireAuthAdmin = (req: Request, res: Response, next: NextFunction) => {
     if (!req.currentUser) {
         throw new NotAuthorizedError();
     }
