@@ -145,7 +145,7 @@ export const generateEanBarcode = (): string => {
 };
 
 //NOTE - Veri tabanı ile arasındaki referanslarından kaldırmak için kullanılır...
-export const clearRef = <T>(data: T): T => {
+export const clearRef = (data: any): any => {
     return JSON.parse(JSON.stringify(data));
 };
 
