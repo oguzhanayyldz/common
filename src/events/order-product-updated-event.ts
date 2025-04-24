@@ -1,3 +1,5 @@
+import { CurrencyCode } from "../types/currency-code";
+
 export interface OrderProductUpdatedEvent {
     id: string;
     uuid: string;
@@ -28,4 +30,5 @@ export interface OrderProductUpdatedEvent {
     uniqueCode?: string | null;
     deleted?: boolean;
     deletionDate?: Date | null;
+    currency?: CurrencyCode;
 }

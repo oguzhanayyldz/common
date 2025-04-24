@@ -1,3 +1,4 @@
+import { CurrencyCode } from "../types/currency-code";
 import { OrderProductCretedEvent } from "./order-product-created-event";
 import { Subjects } from "./subjects";
 import { OrderStatus } from "./types/order-status";
@@ -106,6 +107,7 @@ export interface OrderCreatedEvent {
         shippingTotal?: number;
         shippingTaxRate?: number;
         date: Date;
+        currency: CurrencyCode;
         uniqueCode?: string | null;
         orderProducts?: OrderProductCretedEvent[];
     };
