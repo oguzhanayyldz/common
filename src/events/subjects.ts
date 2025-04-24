@@ -1,3 +1,4 @@
+import { OrderStatus } from './types/order-status';
 export enum Subjects {
     ProductCreated = "product:created",
     ProductUpdated = "product:updated",
@@ -15,6 +16,7 @@ export enum Subjects {
     StockUpdated = "stock:updated",
     OrderCreated = "order:created",
     OrderUpdated = "order:updated",
+    OrderStatusUpdated = "order:status:updated",
     IntegrationCommand = "integration:command",
     EntityDeleted = "entity:deleted"
 }

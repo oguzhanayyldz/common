@@ -33,6 +33,7 @@ export * from './events/order-created-event';
 export * from './events/order-product-created-event';
 export * from './events/order-updated-event';
 export * from './events/order-product-updated-event';
+export * from './events/order-status-updated-event';
 export * from './events/integration-command-event';
 export * from './events/entity-deleted-event';
 export * from './events/types/product-status';
