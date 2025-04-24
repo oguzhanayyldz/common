@@ -5,7 +5,7 @@ import { OrderType } from "./types/order-type";
 import { PaymentType } from "./types/payment-type";
 
 export interface OrderStatusUpdatedEvent {
-    subject: Subjects.OrderUpdated;
+    subject: Subjects.OrderStatusUpdated;
     data: {
         id: string;
         uuid: string;
