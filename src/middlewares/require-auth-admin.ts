@@ -7,6 +7,7 @@ export const requireAuthAdmin = (req: Request, res: Response, next: NextFunction
         throw new NotAuthorizedError();
     }
 
+    console.log('User role:', req.currentUser.role, UserRole.Admin);
     if (req.currentUser.role !== UserRole.Admin) {
         throw new NotAuthorizedError();
     }
