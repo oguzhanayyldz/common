@@ -49,6 +49,7 @@ export * from './types/integration-type';
 export * from './types/resourceName';
 export * from './types/user-role';
 export * from './types/credential-type';
+export * from './types/credential-group';
 export * from './types/shelf-barcodes-list';
 export * from './types/currency-code';
 export * from './types/currency-symbol';
