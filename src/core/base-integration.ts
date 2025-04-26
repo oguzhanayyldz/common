@@ -12,17 +12,17 @@ export abstract class BaseIntegration {
     protected abstract connect(): Promise<void>;
 
     validateSetupRequirements(): void {
-        // Her entegrasyonda olması gereken ortak alanların kontrolü
-        // const requiredFields = ['apiKey', 'apiSecret', 'user', 'platform', 'integration_active'];
-        // for (const field of requiredFields) {
-        //     if (!this.credentials[field]) {
-        //         throw new Error(`${field} is required`);
-        //     }
-        // }
+        //Her entegrasyonda olması gereken ortak alanların kontrolü
+        const requiredFields = ['user', 'platform', 'integration_active'];
+        for (const field of requiredFields) {
+            if (!this.credentials[field]) {
+                throw new Error(`${field} is required`);
+            }
+        }
 
-        // if (!this.credentials) {
-        //     throw new Error('Credentials are required');
-        // }
+        if (!this.credentials) {
+            throw new Error('Credentials are required');
+        }
 
         if (!this.credentials.integration_active) {
             throw new Error('Integration is not active');
