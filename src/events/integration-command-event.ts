@@ -8,7 +8,10 @@ export interface IntegrationCommandEvent {
         platform: ResourceName;
         merchantId: string;
         command: string;
-        payload?: any;
         params?: any;
+        payload?: {
+            credentials: Record<string, any>;
+            integrationId: string;
+        };
     };
 }
