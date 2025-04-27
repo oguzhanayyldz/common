@@ -18,5 +18,6 @@ export enum Subjects {
     OrderUpdated = "order:updated",
     OrderStatusUpdated = "order:status:updated",
     IntegrationCommand = "integration:command",
+    IntegrationCommandResult = "integration:command:result",
     EntityDeleted = "entity:deleted"
 }

@@ -6,7 +6,6 @@ export interface IntegrationCommandEvent {
     data: {
         user: string;
         platform: ResourceName;
-        merchantId: string;
         command: string;
         params?: any;
         payload?: {

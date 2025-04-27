@@ -35,6 +35,7 @@ export * from './events/order-updated-event';
 export * from './events/order-product-updated-event';
 export * from './events/order-status-updated-event';
 export * from './events/integration-command-event';
+export * from './events/integration-command-result-event';
 export * from './events/entity-deleted-event';
 export * from './events/types/product-status';
 export * from './events/types/product-type';
