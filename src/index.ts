@@ -67,3 +67,4 @@ export * from './interfaces/integration-instance.interface';
 export * from './core/base-integration';
 export * from './core/integration-credentials';
 export * from './core/marketplace-integration';
+export * from './core/ecommerce-integration';
