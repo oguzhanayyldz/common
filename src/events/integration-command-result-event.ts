@@ -4,6 +4,7 @@ import { Subjects } from "./subjects";
 export interface IntegrationCommandResultEvent {
     subject: Subjects.IntegrationCommandResult;
     data: {
+        requestId: string;
         user: string;
         platform: ResourceName;
         command: string;
