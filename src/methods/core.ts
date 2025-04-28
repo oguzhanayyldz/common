@@ -180,3 +180,22 @@ export const sortByField = <T>(array: T[], field: keyof T, order: "asc" | "desc"
         return 0;
     });
 };
+
+//NOTE - Bir array'i belirtilen boyuta göre parçalara böler.
+// Örneğin, [1, 2, 3, 4, 5] ve chunkSize = 2 ise, [[1, 2], [3, 4], [5]] döner.
+export const chunkArray = (array: any[], chunkSize: number) => {
+    if (!Array.isArray(array)) {
+        throw new TypeError('First argument must be an array');
+    }
+    if (typeof chunkSize !== 'number' || chunkSize <= 0) {
+        throw new TypeError('Chunk size must be a positive number');
+    }
+
+    const chunks = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+        const chunk = array.slice(i, i + chunkSize);
+        chunks.push(chunk);
+    }
+    
+    return chunks;
+}
