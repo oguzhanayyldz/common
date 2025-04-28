@@ -7,7 +7,7 @@ export interface ProductIntegrationCreated {
     id: string;
     name: string;
     sku: string;
-    barcode: string;
+    barcode?: string;
     description: string;
     listPrice?: number;
     price: number;
