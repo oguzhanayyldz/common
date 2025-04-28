@@ -16,26 +16,36 @@ export interface ProductIntegrationCreated {
     unitType?: UnitType;
     currency?: CurrencyCode;
     source?: ResourceName;
-    category?: {
-        name: string;
-        code: string;
-    };
-    brand?: {
-        name: string;
-        code: string;
-    };
-    images?: {
-        name?: string;
-        url: string;
-    }[];
-    combinations?: {
-        id: string;
-        sku: string;
-        barcode: string;
-        price?: number;
-        attributes?: {
-            name: string;
-            value: string;
-        }[];
-    }[];
+    category?: ProductIntegrationCategory;
+    brand?: ProductIntegrationBrand;
+    images?: ProductIntegrationImage[];
+    combinations?: ProductIntegrationCombination[];
+}
+
+export interface ProductIntegrationCategory {
+    name: string;
+    code: string;
+}
+
+export interface ProductIntegrationBrand {
+    name: string;
+    code: string;
+}
+
+export interface ProductIntegrationImage {
+    name?: string;
+    url: string;
+}
+
+export interface ProductIntegrationCombination {
+    id: string;
+    sku: string;
+    barcode: string;
+    price?: number;
+    attributes?: ProductIntegrationAttribute[];
+}
+
+export interface ProductIntegrationAttribute {
+    name: string;
+    value: string;
 }
