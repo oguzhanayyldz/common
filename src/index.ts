@@ -18,6 +18,7 @@ export * from './events/subjects';
 export * from './events/user-created-event';
 export * from './events/user-updated-event';
 export * from './events/product-created-event';
+export * from './events/product-integration-created-event';
 export * from './events/product-updated-event';
 export * from './events/product-stock-created-event';
 export * from './events/product-stock-updated-event';
@@ -63,6 +64,7 @@ export * from './methods/validator';
 
 export * from './interfaces/validator-func-params.interface';
 export * from './interfaces/integration-instance.interface';
+export * from './interfaces/product-integration-created.interface';
 
 export * from './core/base-integration';
 export * from './core/integration-credentials';

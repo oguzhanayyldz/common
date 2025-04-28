@@ -1,7 +1,7 @@
-import { OrderStatus } from './types/order-status';
 export enum Subjects {
     ProductCreated = "product:created",
     ProductUpdated = "product:updated",
+    ProductIntegrationCreated = "product:integration:created",
     ProductStockCreated = "product:stock:created",
     ProductStockUpdated = "product:stock:updated",
     CombinationCreated = "combination:created",
