@@ -19,5 +19,7 @@ export enum Subjects {
     OrderStatusUpdated = "order:status:updated",
     IntegrationCommand = "integration:command",
     IntegrationCommandResult = "integration:command:result",
-    EntityDeleted = "entity:deleted"
+    EntityDeleted = "entity:deleted",
+    ImportImagesFromUrls = 'cdn:import-images-from-urls',
+    ImportImagesFromUrlsCompleted = 'cdn:import-images-from-urls-completed',
 }
