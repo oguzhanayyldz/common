@@ -47,6 +47,7 @@ export * from './events/types/payment-type';
 export * from './events/import-images-from-urls-event';
 export * from './events/import-images-from-urls-completed-event';
 export * from './events/delete-product-images-event';
+export * from './events/delete-product-images-completed-event';
 
 export * from './types/fix-status';
 export * from './types/unit-type';
