@@ -4,6 +4,7 @@ import { ProductIntegrationCreated } from '../interfaces/product-integration-cre
 export interface ProductIntegrationCreatedEvent {
     subject: Subjects.ProductIntegrationCreated;
     data: {
+        requestId: string;
         userId: string;
         products: ProductIntegrationCreated[];
     }
