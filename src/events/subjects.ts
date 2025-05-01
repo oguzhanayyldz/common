@@ -22,4 +22,5 @@ export enum Subjects {
     EntityDeleted = "entity:deleted",
     ImportImagesFromUrls = 'cdn:import-images-from-urls',
     ImportImagesFromUrlsCompleted = 'cdn:import-images-from-urls-completed',
+    DeleteProductImages = 'cdn:delete-product-images',
 }
