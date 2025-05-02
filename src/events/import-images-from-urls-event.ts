@@ -12,6 +12,7 @@ export interface ImportImagesFromUrlsEvent {
             height?: number;
             quality?: number;
             format?: 'jpeg' | 'png' | 'webp';
+            originalFilenames?: boolean;
         };
     };
 }
