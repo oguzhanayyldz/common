@@ -9,6 +9,7 @@ interface UserPayload {
     surname: string;
     parentUser: string;
     role: UserRole;
+    isImpersonating?: boolean;
 }
 
 declare global {
