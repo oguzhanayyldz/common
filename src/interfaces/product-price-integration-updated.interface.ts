@@ -1,3 +1,4 @@
+import { CurrencyCode } from "../types/currency-code";
 import { ResourceName } from "../types/resourceName";
 
 export interface ProductPriceIntegrationUpdated {
@@ -5,7 +6,7 @@ export interface ProductPriceIntegrationUpdated {
     barcode?: string;      // Barkod
     listPrice?: number;   // Liste fiyatı
     price: number;
-    currency: string;     // Para birimi
+    currency?: CurrencyCode;     // Para birimi
     costPrice?: number; // Maliyet fiyatı
     comparePrice?: number; // Karşılaştırma fiyatı
 }
