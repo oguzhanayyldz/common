@@ -44,7 +44,7 @@ export interface PriceSource {
     priority: number;        // Öncelik sırası
     priceType: PriceType;    // Fiyat tipi
     applyCurrency: boolean;  // Kur dönüşümü uygula
-    targets: ResourceName[]; // Hedef entegrasyonlar (ResourceName)
+    targets: PriceTargetIntegration[]; // Hedef entegrasyonlar (ResourceName)
     rules: SourceRules;      // Kaynak kuralları
 }
 
@@ -63,9 +63,14 @@ export interface PriceUpdateSettings {
     enabled: boolean;                // Aktif/Pasif
     strategy: PriceUpdateStrategy;   // Strateji
     sources: PriceSource[];          // Kaynak entegrasyonlar
-    targetIntegrations: ResourceName[]; // Hedef entegrasyonlar (ResourceName)
+    targetIntegrations: PriceTargetIntegration[]; // Hedef entegrasyonlar (ResourceName)
     updateFrequency: UpdateFrequency;  // Güncelleme sıklığı
     updateTime: string;              // Güncelleme saati (HH:MM formatı)
     lastUpdate: string | null;       // Son güncelleme zamanı (ISO string)
     advanced: AdvancedSettings;      // Gelişmiş ayarlar
+}
+
+export interface PriceTargetIntegration {
+    integrationId: string;   // Entegrasyon ID
+    name: ResourceName;      // Entegrasyon adı
 }
