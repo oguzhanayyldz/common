@@ -4,7 +4,11 @@ export interface ProductPriceIntegrationUpdated {
     sku: string;            // Ürün kodu
     barcode?: string;      // Barkod
     listPrice?: number;   // Liste fiyatı
-    price?: number;  
+    price: number;
+    tax?: number;         // Vergi oranı
+    currency: string;     // Para birimi
+    costPrice?: number; // Maliyet fiyatı
+    comparePrice?: number; // Karşılaştırma fiyatı
 }
 
 // Fiyat güncelleme stratejileri
