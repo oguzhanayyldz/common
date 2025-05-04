@@ -13,5 +13,6 @@ export interface IntegrationCommandEvent {
             credentials: Record<string, any>;
             integrationId: string;
         };
+        replyTo?: any;
     };
 }
