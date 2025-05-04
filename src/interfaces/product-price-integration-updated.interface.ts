@@ -1,31 +1,10 @@
 import { ResourceName } from "../types/resourceName";
 
 export interface ProductPriceIntegrationUpdated {
-    sku: string;
-    barcode?: string;
-    listPrice?: number;
-    price: number;
-    source?: ResourceName; // Hangi platform için güncelleme yapılacak
-    settings: PriceUpdateSettings;
-}
-
-export interface ProductPriceUpdateConfiguration {
-    enabled: boolean;
-    source: string;  // Hangi platform için güncelleme yapılacak
-    fields: {
-        name: boolean;
-        description: boolean;
-        price: boolean;
-        listPrice: boolean;
-        tax: boolean;
-        barcode: boolean;
-        sku: boolean;
-        status: boolean;
-        images: boolean;
-        combinations: boolean;
-        category: boolean;
-        brand: boolean;
-    };
+    sku: string;            // Ürün kodu
+    barcode?: string;      // Barkod
+    listPrice?: number;   // Liste fiyatı
+    price?: number;  
 }
 
 // Fiyat güncelleme stratejileri
@@ -90,22 +69,3 @@ export interface PriceUpdateSettings {
     lastUpdate: string | null;       // Son güncelleme zamanı (ISO string)
     advanced: AdvancedSettings;      // Gelişmiş ayarlar
 }
-
-// Kullanım örneği:
-const defaultSettings: PriceUpdateSettings = {
-    enabled: false,
-    strategy: PriceUpdateStrategy.PRIORITY,
-    sources: [],
-    targetIntegrations: [],
-    updateFrequency: UpdateFrequency.DAILY,
-    updateTime: "03:00",
-    lastUpdate: null,
-    advanced: {
-        skipOutOfStock: true,
-        applyToAttributes: [],
-        updateBothPrices: false,
-        notifyChanges: true,
-        logHistory: true,
-        advancedTargetingMode: false
-    }
-};
