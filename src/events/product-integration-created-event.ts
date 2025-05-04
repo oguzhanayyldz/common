@@ -29,6 +29,6 @@ export interface ProductUpdateConfiguration {
         images: boolean;
         combinations: boolean;
         category: boolean;
-        brand: boolean;
+        brand: boolean;        
     };
 }
