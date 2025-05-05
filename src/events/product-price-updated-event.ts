@@ -22,5 +22,5 @@ export interface ProductPriceUpdated {
     version: number,  // Version bilgisini de ekleyin
     source: ResourceName,
     sourceTimestamp: Date,
-    updateRequestId: string
+    updateRequestId?: string
 }
