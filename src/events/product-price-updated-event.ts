@@ -7,7 +7,7 @@ export interface ProductPriceUpdatedEvent {
     data: {
         requestId: string;
         userId: string;
-        data: ProductPriceUpdated[];
+        list: ProductPriceUpdated[];
     }
 }
 
