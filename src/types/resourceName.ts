@@ -1,4 +1,5 @@
 export enum ResourceName {
+    Main= "Main",
     Trendyol = "Trendyol",
     Hepsiburada = "Hepsiburada",
     N11 = "N11",

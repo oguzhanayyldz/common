@@ -25,4 +25,5 @@ export enum Subjects {
     DeleteProductImages = 'cdn:delete-product-images',
     DeleteProductImagesCompleted = 'cdn:delete-product-images-completed',
     ProductPriceIntegrationUpdated = "product:price:integration:updated",
+    ProductPriceUpdated = "product:price:updated",
 }
