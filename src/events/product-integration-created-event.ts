@@ -9,7 +9,8 @@ export interface ProductIntegrationCreatedEvent {
         userId: string;
         products: ProductIntegrationCreated[];
         source?: ResourceName;
-        updateConfiguration?: ProductUpdateConfiguration; 
+        updateConfiguration?: ProductUpdateConfiguration;
+        timestamp?: Date;
     }
 }
 
