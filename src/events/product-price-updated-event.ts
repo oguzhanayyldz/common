@@ -1,6 +1,5 @@
 import { Subjects } from "./subjects";
 import { ResourceName } from "../types/resourceName";
-import { PriceUpdateSettings, ProductPriceIntegrationUpdated } from "../interfaces/product-price-integration-updated.interface";
 import { CurrencyCode } from "../types/currency-code";
 
 export interface ProductPriceUpdatedEvent {
@@ -8,7 +7,7 @@ export interface ProductPriceUpdatedEvent {
     data: {
         requestId: string;
         userId: string;
-        data: ProductPriceIntegrationUpdated[];
+        data: ProductPriceUpdated[];
     }
 }
 
