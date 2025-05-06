@@ -17,7 +17,7 @@ export interface ProductPriceUpdated {
     combination?: string,
     price: number,
     listPrice?: number,
-    currency?: CurrencyCode,
+    currency: CurrencyCode,
     version: number,  // Version bilgisini de ekleyin
     source: ResourceName,
     sourceTimestamp: Date,

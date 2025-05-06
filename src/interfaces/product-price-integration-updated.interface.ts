@@ -6,7 +6,7 @@ export interface ProductPriceIntegrationUpdated {
     barcode?: string;      // Barkod
     listPrice?: number;   // Liste fiyatı
     price: number;
-    currency?: CurrencyCode;     // Para birimi
+    currency: CurrencyCode;     // Para birimi
     costPrice?: number; // Maliyet fiyatı
     comparePrice?: number; // Karşılaştırma fiyatı
 }
