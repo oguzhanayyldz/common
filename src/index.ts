@@ -50,6 +50,7 @@ export * from './events/import-images-from-urls-completed-event';
 export * from './events/delete-product-images-event';
 export * from './events/delete-product-images-completed-event';
 export * from './events/product-price-updated-event';
+export * from './events/product-stock-integration-updated-event'
 
 export * from './types/fix-status';
 export * from './types/unit-type';
@@ -73,6 +74,7 @@ export * from './interfaces/validator-func-params.interface';
 export * from './interfaces/integration-instance.interface';
 export * from './interfaces/product-integration-created.interface';
 export * from './interfaces/product-price-integration-updated.interface'
+export * from './interfaces/product-stock-integration-updated.interface';
 
 export * from './core/base-integration';
 export * from './core/integration-credentials';
