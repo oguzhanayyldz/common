@@ -16,8 +16,6 @@ export interface ProductUpdatedEvent {
         name: string;
         image: string;
         description: string;
-        listPrice?: number;
-        price: number;
         currency: CurrencyCode;
         tax: number;
         status: ProductStatus;
