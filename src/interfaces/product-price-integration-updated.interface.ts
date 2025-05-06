@@ -2,6 +2,8 @@ import { CurrencyCode } from "../types/currency-code";
 import { ResourceName } from "../types/resourceName";
 
 export interface ProductPriceIntegrationUpdated {
+    productId?: string; // Ürün ID'si
+    combinationId?: string; // Kombinasyon ID'si
     sku: string;            // Ürün kodu
     barcode?: string;      // Barkod
     listPrice?: number;   // Liste fiyatı
