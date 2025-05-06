@@ -28,7 +28,7 @@ export interface StockSource {
     integrationId: string;
     name: string;
     enabled: boolean;
-    warehouseId: string | null;
+    warehouseId: string;
     shelfId: string | null;
     rules: StockSourceRules;
 }
