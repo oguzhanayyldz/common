@@ -10,6 +10,7 @@ export interface ProductStockIntegrationUpdated {
 
 // Güncelleme sıklıkları
 export enum StockUpdateFrequency {
+    MINUTE = "minute",
     HOURLY = "hourly",
     DAILY = "daily",
     WEEKLY = "weekly",
@@ -45,7 +46,7 @@ export interface StockUpdateSettings {
     enabled: boolean;
     sources: StockSource[];
     updateFrequency: StockUpdateFrequency;
-    updateTime: string;
+    updateTime: string | number;
     lastUpdate: string | null;
     advanced: StockAdvancedSettings
 }
