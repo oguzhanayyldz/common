@@ -2,7 +2,7 @@ export interface ProductStockIntegrationUpdated {
     sku: string;
     barcode?: string;
     quantity: number;
-    warehouseId?: string;
+    warehouseId: string;
     shelfId?: string;
     combinationId?: string;
     productId?: string;
