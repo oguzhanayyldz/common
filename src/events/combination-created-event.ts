@@ -12,7 +12,6 @@ export interface CombinationCreatedEvent {
         version: number;
         barcode: string;
         sku: string;
-        price: number;
         status: FixStatus;
         erpId?: string | null;
         sort?: number | null;
