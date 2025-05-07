@@ -78,4 +78,5 @@ export interface PriceUpdateSettings {
 export interface PriceTargetIntegration {
     integrationId: string;   // Entegrasyon ID
     name: ResourceName;      // Entegrasyon adı
+    enabled: boolean;        // Aktif/Pasif
 }
