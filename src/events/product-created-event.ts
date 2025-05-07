@@ -51,6 +51,7 @@ export interface ProductCreatedEventDataListItemCombination {
     sort?: number | null;
     attributes?: AttributesType;
     uniqueCode?: string | null;
+    action?: 'create' | 'update';
 }
 
 export interface ProductCreatedEventDataListItemPackage {
@@ -64,6 +65,7 @@ export interface ProductCreatedEventDataListItemPackage {
     product: string;
     packageProduct: string;
     uniqueCode?: string | null;
+    action?: 'create' | 'update';
 }
 
 export interface ProductCreatedEventDataListItemRelated {

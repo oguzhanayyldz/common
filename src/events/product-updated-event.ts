@@ -53,6 +53,7 @@ export interface ProductUpdatedEventDataListItemCombination {
     deleted?: boolean;
     deletionDate?: Date | null;
     uniqueCode?: string | null;
+    action?: 'create' | 'update';
 }
 
 export interface ProductUpdatedEventDataListItemPackage {
@@ -68,6 +69,7 @@ export interface ProductUpdatedEventDataListItemPackage {
     product: string;
     packageProduct: string;
     uniqueCode?: string | null;
+    action?: 'create' | 'update';
 }
 
 export interface ProductUpdatedEventDataListItemRelated {
