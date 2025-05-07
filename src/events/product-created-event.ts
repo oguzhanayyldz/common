@@ -4,7 +4,7 @@ import { Subjects } from "./subjects";
 import { ProductStatus } from "./types/product-status";
 import { ProductType } from "./types/product-type";
 import { FixStatus } from '../types/fix-status';
-import { AttributesType } from '../../build/types/attributes-type';
+import { AttributesType } from '../types/attributes-type';
 
 export interface ProductCreatedEvent {
     subject: Subjects.ProductCreated;

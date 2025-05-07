@@ -4,7 +4,7 @@ import { ProductType } from "./types/product-type";
 import { UnitType } from "../types/unit-type";
 import { CurrencyCode } from "../types/currency-code";
 import { FixStatus } from '../types/fix-status';
-import { AttributesType } from '../../build/types/attributes-type';
+import { AttributesType } from '../types/attributes-type';
 
 export interface ProductUpdatedEvent {
     subject: Subjects.ProductUpdated;
