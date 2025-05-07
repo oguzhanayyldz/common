@@ -5,32 +5,26 @@ import { ProductType } from "./types/product-type";
 
 export interface CombinationUpdatedEvent {
     subject: Subjects.CombinationUpdated;
-    data: CombinationUpdatedEventData;
-}
-
-export interface CombinationUpdatedEventData {
-    list: CombinationUpdatedEventDataListItem[];
-}
-
-export interface CombinationUpdatedEventDataListItem {
-    id: string;
-    uuid: string;
-    user: string;
-    version: number;
-    barcode: string;
-    sku: string;
-    status: FixStatus;
-    erpId?: string | null;
-    sort?: number | null;
-    attributes?: AttributesType;
-    deleted?: boolean;
-    deletionDate?: Date | null;
-    product: {
+    data: {
         id: string;
         uuid: string;
         user: string;
         version: number;
-        type: ProductType;
+        barcode: string;
+        sku: string;
+        status: FixStatus;
+        erpId?: string | null;
+        sort?: number | null;
+        attributes?: AttributesType;
+        deleted?: boolean;
+        deletionDate?: Date | null;
+        product: {
+            id: string;
+            uuid: string;
+            user: string;
+            version: number;
+            type: ProductType;
+        };
+        uniqueCode?: string | null;
     };
-    uniqueCode?: string | null;
 }

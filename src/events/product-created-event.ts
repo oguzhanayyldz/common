@@ -30,6 +30,7 @@ export interface ProductCreatedEventDataListItem {
     status: ProductStatus;
     type: ProductType;
     unitType: UnitType;
+    brand?: string | null;
     erpId?: string | null;
     combinations?: ProductCreatedEventDataListItemCombination[];
     packages?: ProductCreatedEventDataListItemPackage[];

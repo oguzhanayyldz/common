@@ -30,6 +30,7 @@ export interface ProductUpdatedEventDataListItem {
     status: ProductStatus;
     type: ProductType;
     unitType: UnitType;
+    brand?: string | null;
     combinations?: ProductUpdatedEventDataListItemCombination[];
     packages?: ProductUpdatedEventDataListItemPackage[];
     related?: ProductUpdatedEventDataListItemRelated;
