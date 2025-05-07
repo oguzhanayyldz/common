@@ -32,6 +32,8 @@ export interface ProductCreatedEventDataListItem {
     unitType: UnitType;
     erpId?: string | null;
     combinations?: ProductCreatedEventDataListItemCombination[];
+    packages?: ProductCreatedEventDataListItemPackage[];
+    related?: ProductCreatedEventDataListItemRelated;
     uniqueCode?: string | null;
     creationDate?: Date;
     updatedOn?: Date;
@@ -48,5 +50,28 @@ export interface ProductCreatedEventDataListItemCombination {
     erpId?: string | null;
     sort?: number | null;
     attributes?: AttributesType;
+    uniqueCode?: string | null;
+}
+
+export interface ProductCreatedEventDataListItemPackage {
+    id: string;
+    uuid: string;
+    user: string;
+    version: number;
+    quantity: number;
+    price: number;
+    status: FixStatus;
+    product: string;
+    packageProduct: string;
+    uniqueCode?: string | null;
+}
+
+export interface ProductCreatedEventDataListItemRelated {
+    id: string;
+    uuid: string;
+    user: string;
+    version: number;
+    product: string;
+    relatedProduct: string;
     uniqueCode?: string | null;
 }

@@ -30,6 +30,9 @@ export interface ProductUpdatedEventDataListItem {
     status: ProductStatus;
     type: ProductType;
     unitType: UnitType;
+    combinations?: ProductUpdatedEventDataListItemCombination[];
+    packages?: ProductUpdatedEventDataListItemPackage[];
+    related?: ProductUpdatedEventDataListItemRelated;
     erpId?: string | null;
     uniqueCode?: string | null;
     deleted?: boolean;
@@ -49,5 +52,32 @@ export interface ProductUpdatedEventDataListItemCombination {
     attributes?: AttributesType;
     deleted?: boolean;
     deletionDate?: Date | null;
+    uniqueCode?: string | null;
+}
+
+export interface ProductUpdatedEventDataListItemPackage {
+    id: string;
+    uuid: string;
+    user: string;
+    version: number;
+    quantity: number;
+    price: number;
+    status: FixStatus;
+    deleted?: boolean;
+    deletionDate?: Date | null;
+    product: string;
+    packageProduct: string;
+    uniqueCode?: string | null;
+}
+
+export interface ProductUpdatedEventDataListItemRelated {
+    id: string;
+    uuid: string;
+    user: string;
+    version: number;
+    deleted?: boolean;
+    deletionDate?: Date | null;
+    product: string;
+    relatedProduct: string;
     uniqueCode?: string | null;
 }
