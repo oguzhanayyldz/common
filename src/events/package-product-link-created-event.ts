@@ -8,7 +8,7 @@ export interface PackageProductLinkCreatedEvent {
 }
 
 export interface PackageProductLinkCreatedEventData {
-    list: PackageProductLinkCreatedEvent[];
+    list: PackageProductLinkCreatedEventDataListItem[];
 }
 
 export interface PackageProductLinkCreatedEventDataListItem {
