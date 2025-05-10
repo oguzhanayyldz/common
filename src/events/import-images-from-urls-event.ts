@@ -5,8 +5,9 @@ export interface ImportImagesFromUrlsEvent {
     data: {
         requestId: string;
         userId: string;
-        productId?: string;
         urls: string[];
+        productId?: string;
+        productIdMap?: Record<string, string>;
         options?: {
             width?: number;
             height?: number;
@@ -14,5 +15,6 @@ export interface ImportImagesFromUrlsEvent {
             format?: 'jpeg' | 'png' | 'webp';
             originalFilenames?: boolean;
         };
+        timestamp?: string;
     };
 }
