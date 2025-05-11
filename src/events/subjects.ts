@@ -1,3 +1,4 @@
+import { ProductImageIntegrationUpdated } from '../interfaces/product-image-integration-updated.interface';
 export enum Subjects {
     ProductCreated = "product:created",
     ProductUpdated = "product:updated",
@@ -27,4 +28,5 @@ export enum Subjects {
     ProductPriceIntegrationUpdated = "product:price:integration:updated",
     ProductPriceUpdated = "product:price:updated",
     ProductStockIntegrationUpdated = "product:stock:integration:updated",
+    ProductImageIntegrationUpdated = "product:image:integration:updated",
 }
