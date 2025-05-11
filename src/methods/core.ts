@@ -199,3 +199,27 @@ export const chunkArray = (array: any[], chunkSize: number) => {
     
     return chunks;
 }
+
+export const extractFilenameFromUrl = (url: string): string | null => {
+    try {
+        const urlObj = new URL(url);
+        const pathname = urlObj.pathname;
+        let filename = pathname.split('/').pop() || '';
+
+        // Query parametreleri veya hash değerlerini temizle
+        // URL sınıfı ile ayrıştırma yaptığımız için urlObj.pathname'de
+        // zaten query parametreleri olmayacak, ama ek güvenlik için:
+        filename = filename.split('?')[0].split('#')[0];
+        
+        // Geçerli bir dosya adı olup olmadığını kontrol et
+        if (filename && filename.includes('.')) {
+            return filename;
+        }
+        
+        // Geçerli bir dosya adı yoksa rastgele oluştur
+        return null;
+    } catch (error) {
+        // URL ayrıştırılamazsa rastgele bir dosya adı kullan
+        return null;
+    }
+}
