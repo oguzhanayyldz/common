@@ -49,3 +49,24 @@ export interface ProductIntegrationAttribute {
     name: string;
     value: string;
 }
+
+export interface ProductUpdateSettings {
+    enabled: boolean;
+    source: string;
+    updateFrequency: 'minute' | 'hourly' | 'daily' | 'weekly' | 'manual';
+    updateTime: string;
+    lastUpdate: string | null;
+    fields: {
+        name: boolean;
+        description: boolean;
+        tax: boolean;
+        barcode: boolean;
+        sku: boolean;
+        status: boolean;
+        images: boolean;
+        combinations: boolean;
+        category: boolean;
+        brand?: boolean;
+        [key: string]: boolean | undefined;
+    }
+}
