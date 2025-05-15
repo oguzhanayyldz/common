@@ -8,6 +8,7 @@ export interface ProductPriceUpdatedEvent {
         requestId: string;
         userId: string;
         list: ProductPriceUpdated[];
+        integrationName?: ResourceName;
     }
 }
 
