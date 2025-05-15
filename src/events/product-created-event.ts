@@ -28,7 +28,7 @@ export interface ProductCreatedEventDataListItem {
     image?: string;
     currency?: string;
     tax: number;
-    status: FixStatus;
+    status: ProductStatus;
     type: ProductType;
     unitType?: string;
     erpId?: string;
