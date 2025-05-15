@@ -5,6 +5,7 @@ import { ProductStatus } from "./types/product-status";
 import { ProductType } from "./types/product-type";
 import { FixStatus } from '../types/fix-status';
 import { AttributesType } from '../types/attributes-type';
+import { ResourceName } from '../types/resourceName';
 
 export interface ProductCreatedEvent {
     subject: Subjects.ProductCreated;
@@ -20,24 +21,24 @@ export interface ProductCreatedEventDataListItem {
     uuid: string;
     user: string;
     version: number;
-    barcode: string | null;
+    barcode: string;
     sku: string;
     name: string;
-    description: string;
-    image: string;
-    currency: CurrencyCode;
+    description?: string;
+    image?: string;
+    currency?: string;
     tax: number;
-    status: ProductStatus;
+    status: FixStatus;
     type: ProductType;
-    unitType: UnitType;
-    brand?: string | null;
-    erpId?: string | null;
+    unitType?: string;
+    erpId?: string;
+    creationDate: Date;
+    updatedOn: Date;
+    uniqueCode: string;
+    brand?: string;
+    source?: ResourceName;
+    sourceData?: Record<string, any>;
     combinations?: ProductCreatedEventDataListItemCombination[];
-    packages?: ProductCreatedEventDataListItemPackage[];
-    related?: ProductCreatedEventDataListItemRelated;
-    uniqueCode?: string | null;
-    creationDate?: Date;
-    updatedOn?: Date;
 }
 
 export interface ProductCreatedEventDataListItemCombination {
@@ -48,11 +49,12 @@ export interface ProductCreatedEventDataListItemCombination {
     barcode: string;
     sku: string;
     status: FixStatus;
-    erpId?: string | null;
-    sort?: number | null;
-    attributes?: AttributesType;
-    uniqueCode?: string | null;
-    action?: 'create' | 'update';
+    erpId?: string;
+    attributes?: Record<string, any>;
+    sort?: number;
+    uniqueCode: string;
+    source?: ResourceName;
+    sourceData?: Record<string, any>;
 }
 
 export interface ProductCreatedEventDataListItemPackage {

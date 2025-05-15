@@ -5,6 +5,7 @@ import { UnitType } from "../types/unit-type";
 import { CurrencyCode } from "../types/currency-code";
 import { FixStatus } from '../types/fix-status';
 import { AttributesType } from '../types/attributes-type';
+import { ResourceName } from '../types/resourceName';
 
 export interface ProductUpdatedEvent {
     subject: Subjects.ProductUpdated;
@@ -20,24 +21,24 @@ export interface ProductUpdatedEventDataListItem {
     uuid: string;
     user: string;
     version: number;
-    barcode: string | null;
+    barcode: string;
     sku: string;
     name: string;
-    image: string;
-    description: string;
-    currency: CurrencyCode;
+    description?: string;
+    image?: string;
+    currency?: string;
     tax: number;
-    status: ProductStatus;
+    status: FixStatus;
     type: ProductType;
-    unitType: UnitType;
-    brand?: string | null;
+    unitType?: string;
+    erpId?: string;
+    uniqueCode: string;
+    brand?: string;
+    source?: ResourceName;
+    sourceData?: Record<string, any>;
     combinations?: ProductUpdatedEventDataListItemCombination[];
-    packages?: ProductUpdatedEventDataListItemPackage[];
-    related?: ProductUpdatedEventDataListItemRelated;
-    erpId?: string | null;
-    uniqueCode?: string | null;
     deleted?: boolean;
-    deletionDate?: Date | null;
+    deletionDate?: Date;
 }
 
 export interface ProductUpdatedEventDataListItemCombination {
@@ -48,13 +49,13 @@ export interface ProductUpdatedEventDataListItemCombination {
     barcode: string;
     sku: string;
     status: FixStatus;
-    erpId?: string | null;
-    sort?: number | null;
-    attributes?: AttributesType;
-    deleted?: boolean;
-    deletionDate?: Date | null;
-    uniqueCode?: string | null;
-    action?: 'create' | 'update';
+    erpId?: string;
+    attributes?: Record<string, any>;
+    sort?: number;
+    uniqueCode: string;
+    source?: ResourceName;
+    sourceData?: Record<string, any>;
+    action: 'create' | 'update' | 'delete';
 }
 
 export interface ProductUpdatedEventDataListItemPackage {
