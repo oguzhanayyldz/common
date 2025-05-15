@@ -21,24 +21,26 @@ export interface ProductUpdatedEventDataListItem {
     uuid: string;
     user: string;
     version: number;
-    barcode: string;
+    barcode: string | null;
     sku: string;
     name: string;
-    description?: string;
-    image?: string;
-    currency?: string;
+    image: string;
+    description: string;
+    currency: CurrencyCode;
     tax: number;
     status: ProductStatus;
     type: ProductType;
-    unitType?: string;
-    erpId?: string;
-    uniqueCode: string;
-    brand?: string;
+    unitType: UnitType;
+    brand?: string | null;
+    combinations?: ProductUpdatedEventDataListItemCombination[];
+    packages?: ProductUpdatedEventDataListItemPackage[];
+    related?: ProductUpdatedEventDataListItemRelated;
+    erpId?: string | null;
+    uniqueCode?: string | null;
+    deleted?: boolean;
+    deletionDate?: Date | null;
     source?: ResourceName;
     sourceData?: Record<string, any>;
-    combinations?: ProductUpdatedEventDataListItemCombination[];
-    deleted?: boolean;
-    deletionDate?: Date;
 }
 
 export interface ProductUpdatedEventDataListItemCombination {
@@ -49,13 +51,15 @@ export interface ProductUpdatedEventDataListItemCombination {
     barcode: string;
     sku: string;
     status: FixStatus;
-    erpId?: string;
-    attributes?: Record<string, any>;
-    sort?: number;
-    uniqueCode: string;
+    erpId?: string | null;
+    sort?: number | null;
+    attributes?: AttributesType;
+    deleted?: boolean;
+    deletionDate?: Date | null;
+    uniqueCode?: string | null;
+    action?: 'create' | 'update';
     source?: ResourceName;
     sourceData?: Record<string, any>;
-    action: 'create' | 'update' | 'delete';
 }
 
 export interface ProductUpdatedEventDataListItemPackage {

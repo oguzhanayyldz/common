@@ -21,24 +21,26 @@ export interface ProductCreatedEventDataListItem {
     uuid: string;
     user: string;
     version: number;
-    barcode: string;
+    barcode: string | null;
     sku: string;
     name: string;
-    description?: string;
-    image?: string;
-    currency?: string;
+    description: string;
+    image: string;
+    currency: CurrencyCode;
     tax: number;
     status: ProductStatus;
     type: ProductType;
-    unitType?: string;
-    erpId?: string;
-    creationDate: Date;
-    updatedOn: Date;
-    uniqueCode: string;
-    brand?: string;
+    unitType: UnitType;
+    brand?: string | null;
+    erpId?: string | null;
+    combinations?: ProductCreatedEventDataListItemCombination[];
+    packages?: ProductCreatedEventDataListItemPackage[];
+    related?: ProductCreatedEventDataListItemRelated;
+    uniqueCode?: string | null;
+    creationDate?: Date;
+    updatedOn?: Date;
     source?: ResourceName;
     sourceData?: Record<string, any>;
-    combinations?: ProductCreatedEventDataListItemCombination[];
 }
 
 export interface ProductCreatedEventDataListItemCombination {
@@ -49,10 +51,11 @@ export interface ProductCreatedEventDataListItemCombination {
     barcode: string;
     sku: string;
     status: FixStatus;
-    erpId?: string;
-    attributes?: Record<string, any>;
-    sort?: number;
-    uniqueCode: string;
+    erpId?: string | null;
+    sort?: number | null;
+    attributes?: AttributesType;
+    uniqueCode?: string | null;
+    action?: 'create' | 'update';
     source?: ResourceName;
     sourceData?: Record<string, any>;
 }
