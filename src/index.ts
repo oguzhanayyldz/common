@@ -78,6 +78,7 @@ export * from './interfaces/product-integration-created.interface';
 export * from './interfaces/product-price-integration-updated.interface'
 export * from './interfaces/product-stock-integration-updated.interface';
 export * from './interfaces/product-image-integration-updated.interface'
+export * from './interfaces/product-export.interface';
 
 export * from './core/base-integration';
 export * from './core/integration-credentials';
