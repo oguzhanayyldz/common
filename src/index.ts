@@ -68,6 +68,7 @@ export * from './types/currency-symbol';
 export * from './types/number-comparisons-type';
 export * from './types/address-type';
 export * from './types/attributes-type';
+export * from './types/integration-status';
 
 export * from './methods/core';
 export * from './methods/validator';

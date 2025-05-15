@@ -6,6 +6,7 @@ import { CurrencyCode } from "../types/currency-code";
 import { FixStatus } from '../types/fix-status';
 import { AttributesType } from '../types/attributes-type';
 import { ResourceName } from '../types/resourceName';
+import { ProductImageInfo } from "./product-created-event";
 
 export interface ProductUpdatedEvent {
     subject: Subjects.ProductUpdated;
@@ -41,6 +42,7 @@ export interface ProductUpdatedEventDataListItem {
     deletionDate?: Date | null;
     source?: ResourceName;
     sourceData?: Record<string, any>;
+    images?: ProductImageInfo[];
 }
 
 export interface ProductUpdatedEventDataListItemCombination {
@@ -60,6 +62,7 @@ export interface ProductUpdatedEventDataListItemCombination {
     action?: 'create' | 'update';
     source?: ResourceName;
     sourceData?: Record<string, any>;
+    images?: ProductImageInfo[];
 }
 
 export interface ProductUpdatedEventDataListItemPackage {

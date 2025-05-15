@@ -16,6 +16,13 @@ export interface ProductCreatedEventData {
     list: ProductCreatedEventDataListItem[];
 }
 
+// Ürün görseli için basit ara yüz
+export interface ProductImageInfo {
+    url: string;      // Görsel URL'i
+    isMain?: boolean; // Ana görsel mi?
+    sort?: number;    // Sıralama
+}
+
 export interface ProductCreatedEventDataListItem {
     id: string;
     uuid: string;
@@ -41,6 +48,8 @@ export interface ProductCreatedEventDataListItem {
     updatedOn?: Date;
     source?: ResourceName;
     sourceData?: Record<string, any>;
+    // Ürün görselleri (çoklu)
+    images?: ProductImageInfo[];
 }
 
 export interface ProductCreatedEventDataListItemCombination {
@@ -58,6 +67,8 @@ export interface ProductCreatedEventDataListItemCombination {
     action?: 'create' | 'update';
     source?: ResourceName;
     sourceData?: Record<string, any>;
+    // Varyant görselleri (çoklu)
+    images?: ProductImageInfo[];
 }
 
 export interface ProductCreatedEventDataListItemPackage {
