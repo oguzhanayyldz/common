@@ -23,6 +23,13 @@ export interface ProductImageInfo {
     sort?: number;    // Sıralama
 }
 
+// Kategori bilgisi için basit arayüz
+export interface ProductCategoryInfo {
+    id: string;       // Kategori ID'si
+    name: string;     // Kategori adı
+    code?: string;    // Kategori kodu (varsa)
+}
+
 export interface ProductCreatedEventDataListItem {
     id: string;
     uuid: string;
@@ -50,6 +57,8 @@ export interface ProductCreatedEventDataListItem {
     sourceData?: Record<string, any>;
     // Ürün görselleri (çoklu)
     images?: ProductImageInfo[];
+    // Kategori bilgisi
+    category?: ProductCategoryInfo;
 }
 
 export interface ProductCreatedEventDataListItemCombination {
