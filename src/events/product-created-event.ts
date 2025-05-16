@@ -30,6 +30,12 @@ export interface ProductCategoryInfo {
     code?: string;    // Kategori kodu (varsa)
 }
 
+export interface ProductBrandInfo {
+    id: string;
+    name: string;
+    code?: string;
+}
+
 export interface ProductCreatedEventDataListItem {
     id: string;
     uuid: string;
@@ -45,7 +51,6 @@ export interface ProductCreatedEventDataListItem {
     status: ProductStatus;
     type: ProductType;
     unitType: UnitType;
-    brand?: string | null;
     erpId?: string | null;
     combinations?: ProductCreatedEventDataListItemCombination[];
     packages?: ProductCreatedEventDataListItemPackage[];
@@ -58,6 +63,7 @@ export interface ProductCreatedEventDataListItem {
     // Ürün görselleri (çoklu)
     images?: ProductImageInfo[];
     // Kategori bilgisi
+    brand?: ProductBrandInfo;
     category?: ProductCategoryInfo;
 }
 

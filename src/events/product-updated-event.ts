@@ -6,7 +6,7 @@ import { CurrencyCode } from "../types/currency-code";
 import { FixStatus } from '../types/fix-status';
 import { AttributesType } from '../types/attributes-type';
 import { ResourceName } from '../types/resourceName';
-import { ProductImageInfo, ProductCategoryInfo } from "./product-created-event";
+import { ProductImageInfo, ProductCategoryInfo, ProductBrandInfo } from "./product-created-event";
 
 export interface ProductUpdatedEvent {
     subject: Subjects.ProductUpdated;
@@ -32,7 +32,6 @@ export interface ProductUpdatedEventDataListItem {
     status: ProductStatus;
     type: ProductType;
     unitType: UnitType;
-    brand?: string | null;
     combinations?: ProductUpdatedEventDataListItemCombination[];
     packages?: ProductUpdatedEventDataListItemPackage[];
     related?: ProductUpdatedEventDataListItemRelated;
@@ -43,6 +42,7 @@ export interface ProductUpdatedEventDataListItem {
     source?: ResourceName;
     sourceData?: Record<string, any>;
     images?: ProductImageInfo[];
+    brand?: ProductBrandInfo;
     category?: ProductCategoryInfo;
 }
 
