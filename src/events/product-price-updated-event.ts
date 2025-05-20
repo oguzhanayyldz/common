@@ -20,6 +20,7 @@ export interface ProductPriceUpdated {
     listPrice?: number,
     version: number,  // Version bilgisini de ekleyin
     source: ResourceName,
+    integrationName?: ResourceName,
     sourceTimestamp: Date,
     updateRequestId?: string
 }
