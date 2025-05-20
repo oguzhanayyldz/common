@@ -9,6 +9,7 @@ export interface ProductPriceIntegrationUpdatedEvent {
         userId: string;
         data: ProductPriceIntegrationUpdated[];
         source?: ResourceName;
+        integrationName?: ResourceName;
         updateConfiguration?: PriceUpdateSettings;
         timestamp?: Date;
     }
