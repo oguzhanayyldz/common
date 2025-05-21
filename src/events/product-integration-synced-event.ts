@@ -11,8 +11,8 @@ export interface ProductSyncedData {
     sku: string;
     barcode?: string;
     code?: string;
-    listPrice?: number;
     isMainProduct?: boolean;
+    listPrice?: number;
 }
 
 /**
