@@ -29,5 +29,6 @@ export interface ProductIntegrationSyncedEvent {
     products: ProductSyncedData[];
     timestamp: Date;
     preserveExistingProducts?: boolean;
+    dontDeleteExistingProducts?: boolean;
   };
 }
