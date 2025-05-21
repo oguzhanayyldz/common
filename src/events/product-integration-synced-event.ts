@@ -1,6 +1,19 @@
 import { Subjects } from './subjects';
-import { ProductIntegrationCreated } from '../interfaces/product-integration-created.interface';
 import { ResourceName } from '../types/resourceName';
+
+/**
+ * Catalog servisi ile entegrasyonlar arasında ürün eşleştirme için kullanılan basitleştirilmiş ürün verisi
+ * @interface ProductSyncedData
+ */
+export interface ProductSyncedData {
+    id: string;
+    name: string;
+    sku: string;
+    barcode?: string;
+    code?: string;
+    listPrice?: number;
+    isMainProduct?: boolean;
+}
 
 /**
  * @description Entegrasyondan senkronize edilen ürün listesi olayı
@@ -14,13 +27,4 @@ export interface ProductIntegrationSyncedEvent {
     products: ProductSyncedData[];
     timestamp: Date;
   };
-} 
-
-export interface ProductSyncedData {
-    id: string;
-    name: string;
-    sku: string;
-    barcode?: string;
-    code?: string;
-    listPrice?: number;
 }
