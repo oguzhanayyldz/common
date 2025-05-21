@@ -53,6 +53,7 @@ export * from './events/product-price-updated-event';
 export * from './events/product-stock-integration-updated-event'
 export * from './events/product-image-integration-updated-event';
 export * from './events/catalog-mapping-created-event';
+export * from './events/product-integration-synced-event';
 
 export * from './types/fix-status';
 export * from './types/unit-type';

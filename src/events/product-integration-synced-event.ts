@@ -11,7 +11,16 @@ export interface ProductIntegrationSyncedEvent {
   data: {
     source: ResourceName;
     userId: string;
-    products: ProductIntegrationCreated[];
+    products: ProductSyncedData[];
     timestamp: Date;
   };
 } 
+
+export interface ProductSyncedData {
+    id: string;
+    name: string;
+    sku: string;
+    barcode?: string;
+    code?: string;
+    listPrice?: number;
+}
