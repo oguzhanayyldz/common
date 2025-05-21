@@ -13,6 +13,8 @@ export interface ProductSyncedData {
     code?: string;
     isMainProduct?: boolean;
     listPrice?: number;
+    price?: number;
+    isFromOurSystem?: boolean;
 }
 
 /**
@@ -26,5 +28,6 @@ export interface ProductIntegrationSyncedEvent {
     userId: string;
     products: ProductSyncedData[];
     timestamp: Date;
+    preserveExistingProducts?: boolean;
   };
 }
