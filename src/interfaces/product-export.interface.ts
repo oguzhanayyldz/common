@@ -88,4 +88,103 @@ export interface ProductExportResult {
   
   // Platforma özgü yanıt verileri
   platformResponse?: Record<string, any>;
+}
+
+/**
+ * Platformlara fiyat güncelleme isteği modeli
+ */
+export interface ProductPriceUpdateRequest {
+  // İşlem requestId
+  requestId?: string;
+  
+  // Moon sistemindeki ürün ID
+  productId: string;
+  
+  // Platform ID (entegrasyon panelindeki ürün ID'si)
+  externalId: string;
+  
+  // Hedef platform
+  platform: ResourceName;
+  
+  // Kullanıcı ID
+  userId: string;
+  
+  // Güncellenecek ana ürün fiyatı (varsa)
+  price?: number;
+  
+  // Güncellenecek liste fiyatı (varsa)
+  listPrice?: number;
+  
+  // Varyant fiyat güncellemeleri (varsa)
+  variants?: Array<{
+    // Varyant ID (Moon sistemindeki combination ID)
+    id: string;
+    
+    // Varyant platform ID (entegrasyon panelindeki varyant ID'si)
+    externalId: string;
+    
+    // Güncellenecek varyant fiyatı
+    price?: number;
+    
+    // Güncellenecek varyant liste fiyatı
+    listPrice?: number;
+  }>;
+  
+  // Platform spesifik ek parametreler
+  platformParams?: Record<string, any>;
+}
+
+/**
+ * Platformlara stok güncelleme isteği modeli
+ */
+export interface ProductStockUpdateRequest {
+  // İşlem requestId
+  requestId?: string;
+  
+  // Moon sistemindeki ürün ID
+  productId: string;
+  
+  // Platform ID (entegrasyon panelindeki ürün ID'si)
+  externalId: string;
+  
+  // Hedef platform
+  platform: ResourceName;
+  
+  // Kullanıcı ID
+  userId: string;
+  
+  // Güncellenecek ana ürün stok miktarı (varsa)
+  stock?: number;
+  
+  // Varyant stok güncellemeleri (varsa)
+  variants?: Array<{
+    // Varyant ID (Moon sistemindeki combination ID)
+    id: string;
+    
+    // Varyant platform ID (entegrasyon panelindeki varyant ID'si)
+    externalId: string;
+    
+    // Güncellenecek varyant stok miktarı
+    stock: number;
+  }>;
+  
+  // Platform spesifik ek parametreler
+  platformParams?: Record<string, any>;
+}
+
+/**
+ * Fiyat/Stok güncelleme işlemi sonuç modeli
+ */
+export interface ProductUpdateResult {
+  // İşlem başarılı mı?
+  success: boolean;
+  
+  // Etkilenen kayıt sayısı
+  count?: number;
+  
+  // Hata mesajı (başarısız olduğunda)
+  error?: string;
+  
+  // Platforma özgü yanıt verileri
+  platformResponse?: Record<string, any>;
 } 
