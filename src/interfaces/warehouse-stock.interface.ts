@@ -55,5 +55,6 @@ export enum WarehouseMapKeys {
 
 /**
  * ProductStock için depo haritasının tipini tanımlar
+ * Hem Map hem de Record olarak kullanılabilir olması için iki tip tanımladık
  */
-export type WarehouseMap = Record<string, WarehouseStockInfo>; 
+export type WarehouseMap = Map<string, WarehouseStockInfo> | Record<string, WarehouseStockInfo>; 
