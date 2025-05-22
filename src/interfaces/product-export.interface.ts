@@ -146,6 +146,9 @@ export interface ProductStockUpdateRequest {
   
   // Platform ID (entegrasyon panelindeki ürün ID'si)
   externalId: string;
+
+  // Diğer platform ID'si (varsa)
+  otherExternalId: string;
   
   // Hedef platform
   platform: ResourceName;
