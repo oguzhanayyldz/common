@@ -71,6 +71,7 @@ export * from './types/address-type';
 export * from './types/attributes-type';
 export * from './types/integration-status';
 export * from './types/stock-action-type';
+export * from './types/price-action-type';
 
 export * from './methods/core';
 export * from './methods/validator';
