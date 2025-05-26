@@ -33,10 +33,9 @@ export * from './events/relation-product-link-updated-event';
 export * from './events/stock-created-event';
 export * from './events/stock-updated-event';
 export * from './events/order-created-event';
-export * from './events/order-product-created-event';
 export * from './events/order-updated-event';
-export * from './events/order-product-updated-event';
 export * from './events/order-status-updated-event';
+export * from './events/order-integration-created-event';
 export * from './events/integration-command-event';
 export * from './events/integration-command-result-event';
 export * from './events/entity-deleted-event';
@@ -82,6 +81,7 @@ export * from './interfaces/product-price-integration-updated.interface'
 export * from './interfaces/product-stock-integration-updated.interface';
 export * from './interfaces/product-image-integration-updated.interface'
 export * from './interfaces/product-export.interface';
+export * from './interfaces/order-integration-created.interface';
 
 export * from './core/base-integration';
 export * from './core/integration-credentials';
