@@ -28,7 +28,7 @@ export interface OrderIntegrationCreated {
     shippingTaxRate?: number;
     date: Date;
     currency: CurrencyCode;
-    orderProducts?: OrderIntegrationProductCreted[];
+    orderProducts: OrderIntegrationProductCreted[];
     fields?: Record<string, any>;
 }
 
