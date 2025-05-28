@@ -7,11 +7,11 @@ import { PaymentType } from "./types/payment-type";
 export interface OrderCreatedEvent {
     subject: Subjects.OrderCreated;
     data: {
-        list: OrderProductCreated[];
+        list: OrderCreated[];
     };
 }
 
-export interface OrderProductCreated {
+export interface OrderCreated {
     id: string;
     uuid: string;
     user: string;
