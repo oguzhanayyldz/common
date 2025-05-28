@@ -199,3 +199,49 @@ export const chunkArray = (array: any[], chunkSize: number) => {
     
     return chunks;
 }
+
+//NOTE - Map nesnesini JSON'a çevirir ve recu00fcrsif olarak içindeki Map'leri Object'e çevirir.
+export function convertMapToObject(obj: any): any {
+    if (!obj) return obj;
+
+    // Eu011fer bu bir Map nesnesi (toJSON metodu varsa) ise, JSON'a u00e7evir
+    if (obj && typeof obj === 'object' && 'toJSON' in obj && typeof obj.toJSON === 'function') {
+        return obj.toJSON();
+    }
+
+    // Nesne u00f6zelliklerini du00f6n ve recu00fcrsif olarak kontrol et
+    if (typeof obj === 'object' && obj !== null) {
+        const result: any = Array.isArray(obj) ? [] : {};
+
+        for (const key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                result[key] = convertMapToObject(obj[key]);
+            }
+        }
+
+        return result;
+    }
+
+    return obj;
+}
+
+//NOTE - Object nesnesini Map'e çevirir.
+export function convertObjectToMap(obj: any) {
+    if (typeof obj !== 'object' || obj === null) return null;
+    const map = new Map();
+    for (const key of Object.keys(obj)) {
+        map.set(key, obj[key]);
+    }
+    return map;
+}
+
+//NOTE - İki Map nesnesini birleştirir. Eğer aynı key varsa, ikinci Map'in değeri ile üzerine yazar.
+export function mergeMaps(map1: Map<any, any>, map2: Map<any, any>): Map<any, any> {
+    const merged = new Map(map1); // map1 kopyalanır
+
+    for (const [key, value] of map2) {
+      merged.set(key, value); // aynı key varsa ÜZERİNE YAZILIR
+    }
+
+    return merged;
+}
