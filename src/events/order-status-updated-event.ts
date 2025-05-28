@@ -9,5 +9,22 @@ export interface OrderStatusUpdatedEvent {
         user: string;
         version: number;
         status: OrderStatus;
+        platformNumber?: string;
+        platform?: string;
+        metadata?: {
+            shopify?: {
+                orderId?: string;
+                fulfillmentStatus?: string;
+                financialStatus?: string;
+                fulfillmentId?: string;
+                [key: string]: any;
+            };
+            trendyol?: {
+                orderNumber?: string;
+                cargoTrackingNumber?: string;
+                [key: string]: any;
+            };
+            [platform: string]: any;
+        };
     };
 }
