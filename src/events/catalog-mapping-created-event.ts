@@ -17,6 +17,8 @@ export interface CatalogMappingCreatedEventData {
         metadata: Record<string, any>;
         parentId?: string;
         variantId?: string;
+        platformCustomSku?: string;
+        platformCustomBarcode?: string;
     };
     isVariant: boolean;
     parentMapping?: string;
