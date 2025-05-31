@@ -32,5 +32,6 @@ export enum Subjects {
     ProductImageIntegrationUpdated = "product:image:integration:updated",
     CatalogMappingCreated = 'catalog.mapping.created',
     IntegrationCreated = 'integration.created',
-    UserIntegrationSettings = 'user.integration.settings'
+    UserIntegrationSettings = 'user.integration.settings',
+    OrderIntegrationStatusUpdated = "order:integration:status:updated",
 }

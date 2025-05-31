@@ -55,6 +55,7 @@ export * from './events/catalog-mapping-created-event';
 export * from './events/product-integration-synced-event';
 export * from './events/integration-created-event';
 export * from './events/user-integration-settings-event';
+export * from './events/order-integration-status-updated-event';
 
 export * from './types/fix-status';
 export * from './types/unit-type';
@@ -84,6 +85,7 @@ export * from './interfaces/product-stock-integration-updated.interface';
 export * from './interfaces/product-image-integration-updated.interface'
 export * from './interfaces/product-export.interface';
 export * from './interfaces/order-integration-created.interface';
+export * from './interfaces/order-integration-status-updated.interface';
 
 export * from './core/base-integration';
 export * from './core/integration-credentials';
