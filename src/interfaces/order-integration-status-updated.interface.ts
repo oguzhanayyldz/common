@@ -11,7 +11,7 @@ export interface OrderIntegrationStatusUpdated {
     creditTotal?: number;
     shippingTotal?: number;
     shippingTaxRate?: number;
-    orderProducts: OrderIntegrationProductStatusUpdated[];
+    orderProducts?: OrderIntegrationProductStatusUpdated[];
     fields?: Record<string, any>;
 }
 
