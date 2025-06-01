@@ -43,6 +43,7 @@ export * from './events/types/product-status';
 export * from './events/types/product-type';
 export * from './events/types/order-type';
 export * from './events/types/order-status';
+export * from './events/types/return-status';
 export * from './events/types/payment-type';
 export * from './events/import-images-from-urls-event';
 export * from './events/import-images-from-urls-completed-event';

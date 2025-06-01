@@ -1,4 +1,5 @@
 import { OrderStatus } from "../events/types/order-status";
+import { ReturnStatus } from "../events/types/return-status";
 import { ResourceName } from "../types/resourceName";
 
 export interface OrderIntegrationStatusUpdated {
@@ -26,6 +27,9 @@ export interface OrderIntegrationProductStatusUpdated {
     returned?: boolean;
     returnedQuantity?: number;
     returnedDate?: Date;
+    returnStatus?: ReturnStatus;
+    returnTrackingNumber?: string;
+    returnNotes?: string;
     fields?: Record<string, any>;
 }
 
