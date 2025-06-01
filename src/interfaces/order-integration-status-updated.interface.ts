@@ -25,6 +25,8 @@ export interface OrderIntegrationProductStatusUpdated {
     cancelledQuantity?: number;
     cancelledDate?: Date;
     returned?: boolean;
+    returnId?: string;
+    returnItemId?: string;
     returnedQuantity?: number;
     returnedDate?: Date;
     returnStatus?: ReturnStatus;
