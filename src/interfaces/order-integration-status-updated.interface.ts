@@ -11,6 +11,7 @@ export interface OrderIntegrationStatusUpdated {
     creditTotal?: number;
     shippingTotal?: number;
     shippingTaxRate?: number;
+    orderCargo?: OrderIntegrationOrderCargoStatusUpdated;
     orderProducts?: OrderIntegrationProductStatusUpdated[];
     fields?: Record<string, any>;
 }
@@ -25,5 +26,18 @@ export interface OrderIntegrationProductStatusUpdated {
     returned?: boolean;
     returnedQuantity?: number;
     returnedDate?: Date;
+    fields?: Record<string, any>;
+}
+
+export interface OrderIntegrationOrderCargoStatusUpdated {
+    cargoName: string;
+    shippingNumber?: string;
+    trackingNumber?: string;
+    printLink?: string;
+    trackingLink?: string;
+    senderNumber?: string;
+    sentDate?: Date;
+    shippedDate?: Date;
+    deliveredDate?: Date;
     fields?: Record<string, any>;
 }
