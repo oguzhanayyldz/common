@@ -1,8 +1,10 @@
 import { CurrencyCode } from "../types/currency-code";
+import { ResourceName } from "../types/resourceName";
 import { Subjects } from "./subjects";
 import { OrderStatus } from "./types/order-status";
 import { OrderType } from "./types/order-type";
 import { PaymentType } from "./types/payment-type";
+import { ReturnStatus } from "./types/return-status";
 
 export interface OrderUpdatedEvent {
     subject: Subjects.OrderUpdated;
@@ -101,7 +103,7 @@ export interface OrderUpdated {
     };
     purchaseNumber?: string;
     platformNumber?: string;
-    platform?: string;
+    platform?: ResourceName;
     docSerial?: string;
     type?: OrderType;
     status?: OrderStatus;
@@ -115,6 +117,7 @@ export interface OrderUpdated {
     creditTotal?: number;
     shippingTotal?: number;
     shippingTaxRate?: number;
+    note?: string;
     date?: Date;
     currency?: CurrencyCode;
     uniqueCode?: string | null;
@@ -149,11 +152,19 @@ export interface OrderProductUpdatedEvent {
     costTotal?: number;
     cancelled?: boolean;
     cancelledQuantity?: number;
+    cancelledDate?: Date;
     returned?: boolean;
     returnedQuantity?: number;
     uniqueCode?: string | null;
     deleted?: boolean;
     deletionDate?: Date | null;
+    returnStatus?: ReturnStatus;
+    returnTrackingNumber?: string;
+    returnNotes?: string;
+    returnId?: string;
+    returnItemId?: string;
+    originalOrderProduct?: string;
+    isDuplicated?: boolean;
     currency?: CurrencyCode;
     fields?: Record<string, any>;
 }
