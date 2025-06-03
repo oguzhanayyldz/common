@@ -31,6 +31,7 @@ export interface OrderIntegrationProductStatusUpdated {
     returnedDate?: Date;
     returnStatus?: ReturnStatus;
     returnTrackingNumber?: string;
+    returnReason?: string;
     returnNotes?: string;
     fields?: Record<string, any>;
 }
