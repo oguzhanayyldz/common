@@ -5,7 +5,7 @@ export interface ProductPriceIntegrationUpdated {
     productId?: string; // Ürün ID'si
     combinationId?: string; // Kombinasyon ID'si
     sku: string;            // Ürün kodu
-    barcode?: string;      // Barkod
+    barcode?: string | null;      // Barkod
     listPrice?: number;   // Liste fiyatı
     price: number;
     costPrice?: number; // Maliyet fiyatı
