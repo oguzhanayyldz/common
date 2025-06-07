@@ -10,7 +10,7 @@ export interface CombinationCreatedEvent {
         uuid: string;
         user: string;
         version: number;
-        barcode: string;
+        barcode?: string | null;
         sku: string;
         status: FixStatus;
         erpId?: string | null;
