@@ -167,4 +167,6 @@ export interface OrderProductUpdatedEvent {
     isDuplicated?: boolean;
     currency?: CurrencyCode;
     fields?: Record<string, any>;
+    isMainPackageProduct?: boolean;
+    isSubPackageProduct?: boolean;
 }

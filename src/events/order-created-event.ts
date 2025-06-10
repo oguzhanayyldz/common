@@ -165,4 +165,6 @@ export interface OrderProductCretedEvent {
     originalOrderProduct?: string;
     isDuplicated?: boolean;
     fields?: Record<string, any>;
+    isMainPackageProduct?: boolean;
+    isSubPackageProduct?: boolean;
 }
