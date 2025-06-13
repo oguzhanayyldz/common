@@ -144,6 +144,5 @@ export interface OrderSources{
 export interface OrderUpdateSettings {
     enabled: boolean;
     sources: OrderSources[];
-    updateFrequency: OrderUpdateFrequency;
     lastUpdate: string | null;
 }
