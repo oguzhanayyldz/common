@@ -107,3 +107,35 @@ export interface OrderIntegrationAddress {
     companyName?: string;
     fields?: Record<string, any>;
 }
+
+export enum OrderUpdateFrequency {
+    MINUTE = "minute",
+    HOURLY = "hourly",
+    DAILY = "daily",
+    WEEKLY = "weekly",
+    MANUAL = "manual"
+}
+
+// Gelişmiş ayarlar
+export interface OrderAdvancedSettings {
+    fetchOnlyNew: boolean;
+    fetchDateRange: number; // Son X gün
+    notifyOnErrors: boolean;
+    keepHistory: boolean;
+}
+
+export interface OrderSyncAdvancedSettings {
+    syncStatus: boolean,
+    syncCancelled: boolean,
+    syncReturned: boolean
+}
+
+export interface OrderUpdateSettings {
+    enabled: boolean;
+    updateFrequency: OrderUpdateFrequency;
+    updateTime: string | number;
+    lastUpdate: string | null;
+    advanced: OrderAdvancedSettings;
+    autoSync: boolean;
+    syncAdvanced: OrderSyncAdvancedSettings;
+}
