@@ -130,12 +130,20 @@ export interface OrderSyncAdvancedSettings {
     syncReturned: boolean
 }
 
-export interface OrderUpdateSettings {
-    enabled: boolean;
+export interface OrderSources{
     updateFrequency: OrderUpdateFrequency;
     updateTime: string | number;
-    lastUpdate: string | null;
+    integrationId: string;   // Entegrasyon ID
+    name: string;            // Entegrasyon adı
+    enabled: boolean;        // Aktif/Pasif
     advanced: OrderAdvancedSettings;
     autoSync: boolean;
     syncAdvanced: OrderSyncAdvancedSettings;
+}
+
+export interface OrderUpdateSettings {
+    enabled: boolean;
+    sources: OrderSources[];
+    updateFrequency: OrderUpdateFrequency;
+    lastUpdate: string | null;
 }
