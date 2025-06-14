@@ -38,6 +38,7 @@ export interface OrderIntegrationProductCreted {
     sku: string;
     barcode: string;
     code?: string;
+    image?: string;
     price: number;
     priceWithoutTax?: number;
     taxPrice: number;
