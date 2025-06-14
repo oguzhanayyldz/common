@@ -167,4 +167,6 @@ export interface OrderProductCretedEvent {
     fields?: Record<string, any>;
     isMainPackageProduct?: boolean;
     isSubPackageProduct?: boolean;
+    // Ürün görsel URL'i
+    image?: string;
 }

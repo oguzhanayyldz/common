@@ -169,4 +169,5 @@ export interface OrderProductUpdatedEvent {
     fields?: Record<string, any>;
     isMainPackageProduct?: boolean;
     isSubPackageProduct?: boolean;
+    image?: string;
 }
