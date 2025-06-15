@@ -9,6 +9,7 @@ interface UserPayload {
     surname: string;
     parentUser: string;
     role: UserRole;
+    sessionId?: string; // Added sessionId for session tracking
     isImpersonating?: boolean;
 }
 
